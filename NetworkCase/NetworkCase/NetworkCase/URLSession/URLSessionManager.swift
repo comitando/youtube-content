@@ -1,7 +1,7 @@
 import Foundation
 
 final class URLSessionManager: NetworkClient {
-
+    
     private var session: URLSession {
         let urlSession = URLSession(configuration: .ephemeral)
         return urlSession
@@ -14,8 +14,8 @@ final class URLSessionManager: NetworkClient {
         }
     }
     
-    func request(from url: URL, completion: @escaping (NetworkClientResult) -> Void) -> NetworkClientTask? {
-        let task = session.dataTask(with: url) { data, response, error in
+    func request(from url: URL, task: ((NetworkClientTask) -> Void)?, completion: @escaping (NetworkClientResult) -> Void) {
+        let dataTask = session.dataTask(with: url) { data, response, error in
             if let error = error {
                 completion(.failure(error))
             } else if let data = data {
@@ -24,8 +24,8 @@ final class URLSessionManager: NetworkClient {
                 completion(.failure(NSError(domain: "unexpected values", code: -1)))
             }
         }
-        task.resume()
-        return URLSessionTaskWrapper(wrapped: task)
+        dataTask.resume()
+        task?(URLSessionTaskWrapper(wrapped: dataTask))
     }
     
 }

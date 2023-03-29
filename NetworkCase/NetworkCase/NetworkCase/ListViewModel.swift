@@ -16,7 +16,9 @@ final class ListViewModel: ViewModelInterface {
     var onFeedItem: (([FeedItem]) -> Void)?
 
     func loadService() {
-        network.request(from: url) { [weak self] result in
+        network.request(from: url) { task in
+            
+        } completion: { [weak self] result in
             switch result {
             case let .success(data): self?.onFeedItem?(ListViewModel.successfullyValidation(data))
             default: self?.onFeedItem?([])

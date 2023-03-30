@@ -2,9 +2,9 @@ import Foundation
 
 final class URLSessionManager: NetworkClient {
     
-    private var session: URLSession {
-        let urlSession = URLSession(configuration: .ephemeral)
-        return urlSession
+    private let session: URLSession
+    init(session: URLSession) {
+        self.session = session
     }
     
     private struct URLSessionTaskWrapper: NetworkClientTask {

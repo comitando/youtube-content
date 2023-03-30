@@ -3,10 +3,10 @@ import Foundation
 
 final class AlamofireManager: NetworkClient {
     
-    private let sessionManager: Session = {
-        let configuration = URLSessionConfiguration.af.ephemeral
-        return Session(configuration: configuration)
-    }()
+    private let sessionManager: Session
+    init(sessionManager: Session) {
+        self.sessionManager = sessionManager
+    }
     
     private struct URLSessionTaskWrapper: NetworkClientTask {
         let wrapped: URLSessionTask
@@ -22,7 +22,8 @@ final class AlamofireManager: NetworkClient {
         .responseData { data in
             switch data.result {
             case let .success(data): completion(.success(data))
-            case let .failure(error): completion(.failure(error))
+            case let .failure(error):
+                completion(.failure(error))
             }
         }
     }

@@ -11,5 +11,5 @@ protocol NetworkClient {
     /// - Parameters:
     ///   - url: url path
     ///   - completion: O bloco `completion` pode ser executado em qualquer thread, quem consumir precisa tratar
-    @discardableResult func request(from url: URL, completion: @escaping (NetworkClientResult) -> Void) -> NetworkClientTask?
+    func request(from url: URL, task: ((NetworkClientTask) -> Void)?, completion: @escaping (NetworkClientResult) -> Void)
 }

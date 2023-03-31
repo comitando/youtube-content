@@ -1,4 +1,5 @@
 import UIKit
+import Alamofire
 
 protocol Creator {
     static func makeWithURLSessionController() -> UIViewController
@@ -7,13 +8,16 @@ protocol Creator {
 
 enum ListViewFactory: Creator {
     static func makeWithURLSessionController() -> UIViewController {
-        let urlSession = URLSessionManager()
-        return makeController(title: "URLSession List", network: urlSession)
+        let urlSession = URLSession(configuration: .ephemeral)
+        let network = URLSessionManager(session: urlSession)
+        return makeController(title: "URLSession List", network: network)
     }
     
     static func makeWithAlamofireController() -> UIViewController {
-        let alamofire = AlamofireManager()
-        return makeController(title: "Alamofire List", network: alamofire)
+        let configuration = URLSessionConfiguration.af.ephemeral
+        let session = Session(configuration: configuration)
+        let network = AlamofireManager(sessionManager: session)
+        return makeController(title: "Alamofire List", network: network)
     }
     
     private static func makeController(title: String, network: NetworkClient) -> UIViewController {

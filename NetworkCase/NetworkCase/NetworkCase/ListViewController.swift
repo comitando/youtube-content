@@ -59,7 +59,9 @@ final class FeedCellController: FeedCellControllerInterface {
     private func downloadImage(_ feedImage: UIImageView?) {
         feedImage?.image = nil
         if let url = URL(string: viewModel.imageUrl) {
-            task = imageNetwork.request(from: url) { result in
+            imageNetwork.request(from: url) { [weak self] task in
+                self?.task = task
+            } completion: { result in
                 switch result {
                 case let .success(data): DispatchQueue.main.async { feedImage?.image = UIImage(data: data) }
                 default: break

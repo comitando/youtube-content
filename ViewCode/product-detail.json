@@ -1,0 +1,41 @@
+{
+    "brand": "Apple",
+    "name": "Notebook MacBookPro 14\", Chip M2 Pro",
+    "color": "Cinza Espacial",
+    "storage": "512GB",
+    "storageType": "SSD",
+    "processor": "Mac",
+    "processorModel": "M2",
+    "ramMemory": "4GB",
+    "ramMemoryCapacity": "16GB",
+    "ramMemoryModel": "DDR4",
+    "screenTechnology": "LED",
+    "screenResolution": "Full HD",
+    "price": 23148.82,
+    "description": "O MacBook Pro de 14 polegadas com chips M2 Pro e M2 Max eleva a potência e a velocidade a um novo patamar, mesmo quando não está ligado na tomada. Com tela Liquid Retina XDR impressionante, um montão de conexões e bateria para o dia todo, é o notebook profissional que você pode levar para qualquer lugar.",
+    "highlights": [
+        "Chip M2 Pro da Apple com CPU de 10 núcleos, GPU de 16 núcleos e Neural Engine de 16 núcleos",
+        "Memória unificada de 16 GB",
+        "SSD de 512 GB",
+        "Adaptador de energia USB-C de 67W",
+        "Tela Liquid Retina XDR de 14 polegadas²",
+        "Três portas Thunderbolt 4, porta HDMI, slot para cartão SDXC, entrada para fones de ouvido, porta MagSafe 3",
+        "Magic Keyboard retroiluminado com Touch ID – Inglês (EUA)"
+    ],
+    "images": [
+        "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-gallery1-202301?wid=2000&hei=1536&fmt=jpeg&qlt=95&.v=1670621031697",
+        "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-gallery2-202301?wid=2000&hei=1536&fmt=jpeg&qlt=95&.v=1671149392013",
+        "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-gallery3-202301?wid=2000&hei=1536&fmt=jpeg&qlt=95&.v=1670621009330",
+        "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-gallery4-202301?wid=2000&hei=1536&fmt=jpeg&qlt=95&.v=1670621014545",
+        "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-gallery5-202301?wid=2000&hei=1536&fmt=jpeg&qlt=95&.v=1670621008925",
+        "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-gallery6-202301?wid=2000&hei=1536&fmt=jpeg&qlt=95&.v=1670621030352",
+        "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-gallery7-202301?wid=2000&hei=1536&fmt=jpeg&qlt=95&.v=1670621020302",
+        "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-gallery8-202301?wid=2000&hei=1536&fmt=jpeg&qlt=95&.v=1670621031287",
+        "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-gallery9-202301?wid=2000&hei=1536&fmt=jpeg&qlt=95&.v=1674769978954"
+    ],
+    "comments": [
+        "Máquina excelente! Atendeu todas as minhas expectativas.",
+        "Máquina excelente! Atendeu todas as minhas expectativas.",
+        "Máquina excelente! Atendeu todas as minhas expectativas."
+    ]
+}

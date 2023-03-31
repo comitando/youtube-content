@@ -8,11 +8,6 @@ final class URLSessionManagerTests: XCTestCase {
         MockURLProtocol.startInterceptingRequests()
     }
     
-    override func tearDown() {
-        super.tearDown()
-        MockURLProtocol.stopInterceptingRequests()
-    }
-    
     func test_request_with_error() {
         let error = NSError(domain: "any error", code: 1)
         let result = assert(data: nil, error: error)

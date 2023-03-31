@@ -48,5 +48,6 @@ final class MockURLProtocol: URLProtocol {
         client?.urlProtocolDidFinishLoading(self)
     }
     
-    override func stopLoading() {}}
+    override func stopLoading() {}
+}
 

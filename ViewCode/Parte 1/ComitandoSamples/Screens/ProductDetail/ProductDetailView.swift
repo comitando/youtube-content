@@ -21,7 +21,7 @@ final class ProductDetailView: UIView {
         element.textColor = .black
         element.numberOfLines = 0
         element.textAlignment = .left
-        element.text = Strings.name
+        element.attributedText = getAttributedString(from: Strings.name)
         return element
     }()
     
@@ -57,7 +57,7 @@ final class ProductDetailView: UIView {
         element.textColor = Asset.Colors.spaceBlue1.color
         element.numberOfLines = 0
         element.textAlignment = .left
-        element.text = Strings.description
+        element.attributedText = getAttributedString(from: Strings.description)
         return element
     }()
     
@@ -82,7 +82,7 @@ final class ProductDetailView: UIView {
         element.textColor = Asset.Colors.gray.color
         element.numberOfLines = 0
         element.textAlignment = .left
-        element.text = Strings.bullet1
+        element.attributedText = getAttributedString(from: Strings.bullet1)
         return element
     }()
     
@@ -107,7 +107,7 @@ final class ProductDetailView: UIView {
         element.textColor = Asset.Colors.gray.color
         element.numberOfLines = 0
         element.textAlignment = .left
-        element.text = Strings.bullet2
+        element.attributedText = getAttributedString(from: Strings.bullet2)
         return element
     }()
     
@@ -132,7 +132,7 @@ final class ProductDetailView: UIView {
         element.textColor = Asset.Colors.gray.color
         element.numberOfLines = 0
         element.textAlignment = .left
-        element.text = Strings.bullet3
+        element.attributedText = getAttributedString(from: Strings.bullet3)
         return element
     }()
     
@@ -157,7 +157,7 @@ final class ProductDetailView: UIView {
         element.textColor = Asset.Colors.gray.color
         element.numberOfLines = 0
         element.textAlignment = .left
-        element.text = Strings.bullet4
+        element.attributedText = getAttributedString(from: Strings.bullet4)
         return element
     }()
     
@@ -182,7 +182,7 @@ final class ProductDetailView: UIView {
         element.textColor = Asset.Colors.gray.color
         element.numberOfLines = 0
         element.textAlignment = .left
-        element.text = Strings.bullet5
+        element.attributedText = getAttributedString(from: Strings.bullet5)
         return element
     }()
     
@@ -193,28 +193,18 @@ final class ProductDetailView: UIView {
         element.textColor = .black
         element.numberOfLines = 0
         element.textAlignment = .left
-        element.text = Strings.price
+        element.attributedText = getAttributedString(from: Strings.price)
         return element
     }()
     
     private lazy var pixPriceLabel: UILabel = {
-        let attributedString = NSMutableAttributedString(string: Strings.pixPrice)
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineHeightMultiple = 1.2
-        attributedString.addAttribute(
-            NSAttributedString.Key.paragraphStyle,
-            value: paragraphStyle,
-            range: NSMakeRange(0, attributedString.length)
-        )
-        
         let element = UILabel()
         element.translatesAutoresizingMaskIntoConstraints = false
         element.font = FontConvertible.Font(font: FontFamily.Rockwell.bold, size: 28)
         element.textColor = .black
         element.numberOfLines = 0
         element.textAlignment = .left
-        element.attributedText = attributedString
-        
+        element.attributedText = getAttributedString(from: Strings.pixPrice)
         return element
     }()
     
@@ -225,7 +215,11 @@ final class ProductDetailView: UIView {
         element.textColor = .black
         element.numberOfLines = 0
         element.textAlignment = .left
-        element.text = Strings.pixMessage
+        element.attributedText = getAttributedString(from: Strings.pixMessage,
+                                                     with: [(text: Strings.pixHighlight,
+                                                             attributes: [
+                                                                .foregroundColor: Asset.Colors.techGreen2.color
+                                                             ])])
         return element
     }()
     
@@ -236,7 +230,7 @@ final class ProductDetailView: UIView {
         element.textColor = .black
         element.numberOfLines = 0
         element.textAlignment = .left
-        element.text = Strings.installmentsMessage
+        element.attributedText = getAttributedString(from: Strings.installmentsMessage)
         return element
     }()
     
@@ -245,9 +239,9 @@ final class ProductDetailView: UIView {
         element.translatesAutoresizingMaskIntoConstraints = false
         element.addTarget(self, action: #selector(didTapBuy), for: .touchUpInside)
         element.tintColor = .black
-        element.setTitle(Strings.buttonBuy, for: .normal)
         element.setTitleColor(.white, for: .normal)
         element.configuration = .makeWith(backgroundColor: Asset.Colors.techGreen2.color,
+                                          title: Strings.buttonBuy,
                                           font: FontConvertible.Font(font: FontFamily.Rockwell.regular, size: 18)!)
         element.layer.cornerRadius = 5
         return element
@@ -258,9 +252,9 @@ final class ProductDetailView: UIView {
         element.translatesAutoresizingMaskIntoConstraints = false
         element.addTarget(self, action: #selector(didTapBuy), for: .touchUpInside)
         element.tintColor = .black
-        element.setTitle(Strings.buttonSimulateDiscount, for: .normal)
         element.setTitleColor(.white, for: .normal)
         element.configuration = .makeWith(backgroundColor: Asset.Colors.techGreen2.color,
+                                          title: Strings.buttonSimulateDiscount,
                                           font: FontConvertible.Font(font: FontFamily.Rockwell.regular, size: 18)!)
         element.layer.cornerRadius = 5
         return element
@@ -296,6 +290,26 @@ final class ProductDetailView: UIView {
     
     // MARK: - Private Methods
     
+    func getAttributedString(from value: String,
+                             with highlights: [(text: String, attributes: [NSAttributedString.Key: Any])]? = nil) -> NSAttributedString {
+        let attributedString = NSMutableAttributedString(string: value)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineHeightMultiple = 1.2
+        attributedString.addAttribute(
+            NSAttributedString.Key.paragraphStyle,
+            value: paragraphStyle,
+            range: NSMakeRange(0, attributedString.length)
+        )
+        
+        if let highlights {
+            highlights.forEach { item in
+                attributedString.addAttributes(item.attributes,
+                                               range: NSString(string: value).range(of: item.text))
+            }
+        }
+        
+        return attributedString
+    }
 }
 
 extension ProductDetailView: ViewCodable {

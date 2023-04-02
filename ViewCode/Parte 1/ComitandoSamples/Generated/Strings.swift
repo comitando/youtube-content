@@ -32,6 +32,8 @@ internal enum Strings {
   internal static let name = Strings.tr("Localizable", "name", fallback: "Notebook MacBookPro 14\", Chip M2 Pro da Apple com CPU de 10núcleos e GPU de 16 núcleos, 16GB, 512GB SSD - Cinza-espacial")
   /// MacBookPro 14" M2 Pro
   internal static let navigationTitle = Strings.tr("Localizable", "navigationTitle", fallback: "MacBookPro 14\" M2 Pro")
+  /// (10%% de desconto)
+  internal static let pixHighlight = Strings.tr("Localizable", "pixHighlight", fallback: "(10%% de desconto)")
   /// no PIX (10%% de desconto)
   internal static let pixMessage = Strings.tr("Localizable", "pixMessage", fallback: "no PIX (10%% de desconto)")
   /// R$ 20.833,94

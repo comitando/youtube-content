@@ -9,6 +9,7 @@
 "price"= "R$ 23.148,82";
 "pixPrice"= "R$ 20.833,94";
 "pixMessage"= "no PIX (10%% de desconto)";
+"pixHighlight"= "(10%% de desconto)";
 "installmentsMessage"= "ou 10x de R$ 2.314,88 sem juros";
 "buttonBuy"= "comprar agora";
 "buttonSimulateDiscount"= "simulador de descontos";

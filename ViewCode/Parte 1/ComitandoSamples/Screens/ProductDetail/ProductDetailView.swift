@@ -198,13 +198,23 @@ final class ProductDetailView: UIView {
     }()
     
     private lazy var pixPriceLabel: UILabel = {
+        let attributedString = NSMutableAttributedString(string: Strings.pixPrice)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineHeightMultiple = 1.2
+        attributedString.addAttribute(
+            NSAttributedString.Key.paragraphStyle,
+            value: paragraphStyle,
+            range: NSMakeRange(0, attributedString.length)
+        )
+        
         let element = UILabel()
         element.translatesAutoresizingMaskIntoConstraints = false
         element.font = FontConvertible.Font(font: FontFamily.Rockwell.bold, size: 28)
         element.textColor = .black
         element.numberOfLines = 0
         element.textAlignment = .left
-        element.text = Strings.pixPrice
+        element.attributedText = attributedString
+        
         return element
     }()
     

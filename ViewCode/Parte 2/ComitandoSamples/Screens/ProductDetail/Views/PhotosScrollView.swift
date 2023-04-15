@@ -1,6 +1,6 @@
 import UIKit
 
-class PhotosView: UIView {
+class PhotosScrollView: UIView {
     
     // MARK: - Private Properties
     private lazy var scrollView = SimpleScrollView(spacing: 8, axis: .horizontal)
@@ -8,6 +8,11 @@ class PhotosView: UIView {
     private lazy var pageControl: UIPageControl = {
         let element = UIPageControl(frame: .zero)
         element.translatesAutoresizingMaskIntoConstraints = false
+        element.isUserInteractionEnabled = false
+        element.numberOfPages = quantityPhotos
+        element.currentPage = 0
+        element.currentPageIndicatorTintColor = Asset.Colors.spaceBlue1.color
+        element.pageIndicatorTintColor = Asset.Colors.techGreen5.color
         return element
     }()
     
@@ -34,14 +39,14 @@ class PhotosView: UIView {
     private func createImageViews(photos: [String],
                                   lateralPadding: CGFloat,
                                   spaceBetweenPhotos: CGFloat) {
-        let width = UIScreen.main.bounds.width - lateralPadding - spaceBetweenPhotos
+        let size = UIScreen.main.bounds.width - lateralPadding - spaceBetweenPhotos
         
         photos.forEach { url in
             let imageView = UIImageView()
             imageView.downloaded(from: url, contentMode: .scaleAspectFill)
             NSLayoutConstraint.activate([
-                imageView.widthAnchor.constraint(equalToConstant: width),
-                imageView.heightAnchor.constraint(equalToConstant: width)
+                imageView.widthAnchor.constraint(equalToConstant: size),
+                imageView.heightAnchor.constraint(equalToConstant: size)
             ])
             imageView.layer.cornerRadius = 8
             imageView.layer.masksToBounds = true
@@ -51,7 +56,7 @@ class PhotosView: UIView {
     }
 }
 
-extension PhotosView: ViewCodable {
+extension PhotosScrollView: ViewCodable {
     func buildViewHierarchy() {
         addSubview(scrollView)
         addSubview(pageControl)
@@ -76,15 +81,10 @@ extension PhotosView: ViewCodable {
         scrollView.clipsToBounds = false
         scrollView.delegate = self
         
-        pageControl.isUserInteractionEnabled = false
-        pageControl.numberOfPages = quantityPhotos
-        pageControl.currentPage = 0
-        pageControl.currentPageIndicatorTintColor = Asset.Colors.spaceBlue1.color
-        pageControl.pageIndicatorTintColor = Asset.Colors.techGreen5.color
     }
 }
 
-extension PhotosView: UIScrollViewDelegate {
+extension PhotosScrollView: UIScrollViewDelegate {
     public func scrollViewWillEndDragging(_ scrollView: UIScrollView,
                                           withVelocity velocity: CGPoint,
                                           targetContentOffset: UnsafeMutablePointer<CGPoint>) {

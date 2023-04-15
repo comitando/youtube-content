@@ -35,7 +35,8 @@ final class ProductDetailView: UIView {
     
     private lazy var actions = ActionsView()
     
-    private lazy var photosView = PhotosView(photos: photos, lateralPadding: 48, spaceBetweenPhotos: 8)
+    private lazy var photosScrollView = PhotosScrollView(photos: photos, lateralPadding: 48, spaceBetweenPhotos: 8)
+    private lazy var photosCollectionView = PhotosCollectionView(photos: photos, lateralPadding: 48, spaceBetweenPhotos: 8)
 
     private lazy var descriptionLabel: UILabel = {
         let element = UILabel()
@@ -139,7 +140,8 @@ extension ProductDetailView: ViewCodable {
     func buildViewHierarchy() {
         scrollView.addSubview(nameLabel)
         scrollView.addSubview(actions)
-        scrollView.addSubview(photosView)
+        scrollView.addSubview(photosScrollView)
+//        scrollView.addSubview(photosCollectionView)
         scrollView.addSubview(descriptionLabel)
         scrollView.addSubview(bullet1)
         scrollView.addSubview(bullet2)
@@ -167,7 +169,8 @@ extension ProductDetailView: ViewCodable {
     func setupAdditionalConfiguration() {
         scrollView.backgroundColor = .white
         scrollView.addCustomSpace(spacing: 16, afterView: actions)
-        scrollView.addCustomSpace(spacing: 16, afterView: photosView)
+        scrollView.addCustomSpace(spacing: 16, afterView: photosScrollView)
+        scrollView.addCustomSpace(spacing: 16, afterView: photosCollectionView)
         scrollView.addCustomSpace(spacing: 16, afterView: descriptionLabel)
         scrollView.addCustomSpace(spacing: 4, afterView: bullet1)
         scrollView.addCustomSpace(spacing: 4, afterView: bullet2)

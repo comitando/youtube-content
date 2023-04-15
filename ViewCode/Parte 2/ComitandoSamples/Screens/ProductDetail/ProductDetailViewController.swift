@@ -22,7 +22,6 @@ class ProductDetailViewController: UIViewController {
         view = productDetailView
     }
     
-    
     // MARK: - Private Methods
 
     private func configureNavigation() {

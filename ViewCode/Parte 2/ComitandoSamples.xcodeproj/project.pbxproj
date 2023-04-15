@@ -18,6 +18,8 @@
 		25D9D50229EB39640034EEC0 /* ActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D9D50129EB39640034EEC0 /* ActionsView.swift */; };
 		25D9D50429EB3F600034EEC0 /* PhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D9D50329EB3F600034EEC0 /* PhotosView.swift */; };
 		25D9D50629EB4DBF0034EEC0 /* ScrollPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D9D50529EB4DBF0034EEC0 /* ScrollPageController.swift */; };
+		25D9D50929EB55D50034EEC0 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D9D50829EB55D50034EEC0 /* UIImageView+Extensions.swift */; };
+		25D9D50B29EB56110034EEC0 /* UIButton.Configuration+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D9D50A29EB56110034EEC0 /* UIButton.Configuration+Extensions.swift */; };
 		25E7515629D7798700C17BA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E7515529D7798700C17BA5 /* AppDelegate.swift */; };
 		25E7515829D7798700C17BA5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E7515729D7798700C17BA5 /* SceneDelegate.swift */; };
 		25E7515F29D7798800C17BA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25E7515E29D7798800C17BA5 /* Assets.xcassets */; };
@@ -58,6 +60,8 @@
 		25D9D50129EB39640034EEC0 /* ActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsView.swift; sourceTree = "<group>"; };
 		25D9D50329EB3F600034EEC0 /* PhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosView.swift; sourceTree = "<group>"; };
 		25D9D50529EB4DBF0034EEC0 /* ScrollPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollPageController.swift; sourceTree = "<group>"; };
+		25D9D50829EB55D50034EEC0 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		25D9D50A29EB56110034EEC0 /* UIButton.Configuration+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton.Configuration+Extensions.swift"; sourceTree = "<group>"; };
 		25E7515229D7798700C17BA5 /* ComitandoSamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComitandoSamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25E7515529D7798700C17BA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25E7515729D7798700C17BA5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +143,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		25D9D50729EB55BD0034EEC0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				25D9D50829EB55D50034EEC0 /* UIImageView+Extensions.swift */,
+				25D9D50A29EB56110034EEC0 /* UIButton.Configuration+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		25E7514929D7798700C17BA5 = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +175,7 @@
 		25E7515429D7798700C17BA5 /* ComitandoSamples */ = {
 			isa = PBXGroup;
 			children = (
+				25D9D50729EB55BD0034EEC0 /* Extensions */,
 				25E751A429D7802C00C17BA5 /* Components */,
 				25E7519B29D77DA100C17BA5 /* Generated */,
 				25E7518F29D77C7300C17BA5 /* Screens */,
@@ -432,6 +446,8 @@
 				25E7518C29D77B2A00C17BA5 /* ApplyDiscountInteractor.swift in Sources */,
 				25E7518D29D77B2A00C17BA5 /* ApplyDiscountPresenter.swift in Sources */,
 				2591C46129D782BF00D67619 /* ViewCodable.swift in Sources */,
+				25D9D50B29EB56110034EEC0 /* UIButton.Configuration+Extensions.swift in Sources */,
+				25D9D50929EB55D50034EEC0 /* UIImageView+Extensions.swift in Sources */,
 				25D9D50029EB38D00034EEC0 /* ProductPriceView.swift in Sources */,
 				2591C45E29D782A000D67619 /* ProductDetailView.swift in Sources */,
 				25E7518B29D77B2A00C17BA5 /* ApplyDiscountViewController.swift in Sources */,

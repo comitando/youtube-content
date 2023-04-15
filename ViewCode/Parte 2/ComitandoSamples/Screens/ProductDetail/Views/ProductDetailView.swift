@@ -1,19 +1,27 @@
 import UIKit
 
 final class ProductDetailView: UIView {
+    // MOCK DATA
+    private let photos = [
+        "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-gallery1-202301?wid=2000&hei=1536&fmt=jpeg&qlt=95&.v=1670621031697",
+        "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-gallery2-202301?wid=2000&hei=1536&fmt=jpeg&qlt=95&.v=1671149392013",
+        "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-gallery3-202301?wid=2000&hei=1536&fmt=jpeg&qlt=95&.v=1670621009330",
+        "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-gallery4-202301?wid=2000&hei=1536&fmt=jpeg&qlt=95&.v=1670621014545",
+        "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-gallery5-202301?wid=2000&hei=1536&fmt=jpeg&qlt=95&.v=1670621008925",
+        "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-gallery6-202301?wid=2000&hei=1536&fmt=jpeg&qlt=95&.v=1670621030352",
+        "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-gallery7-202301?wid=2000&hei=1536&fmt=jpeg&qlt=95&.v=1670621020302",
+        "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-gallery8-202301?wid=2000&hei=1536&fmt=jpeg&qlt=95&.v=1670621031287",
+        "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-gallery9-202301?wid=2000&hei=1536&fmt=jpeg&qlt=95&.v=1674769978954"
+    ]
+    
     
     // MARK: - Private Properties
-    private lazy var scrollView: SimpleScrollView = {
-        let element = SimpleScrollView(spacing: 8,
-                                       margins: .init(top: 24,
-                                                      leading: 24,
-                                                      bottom: 24,
-                                                      trailing: 24))
-        element.showsVerticalScrollIndicator = false
-        element.translatesAutoresizingMaskIntoConstraints = false
-        return element
-    }()
-    
+    private lazy var scrollView = SimpleScrollView(spacing: 8,
+                                                   margins: .init(top: 24,
+                                                                  leading: 24,
+                                                                  bottom: 24,
+                                                                  trailing: 24))
+
     private lazy var nameLabel: UILabel = {
         let element = UILabel()
         element.translatesAutoresizingMaskIntoConstraints = false
@@ -25,7 +33,9 @@ final class ProductDetailView: UIView {
         return element
     }()
     
-    private lazy var actions: ActionsView = .init()
+    private lazy var actions = ActionsView()
+    
+    private lazy var photosView = PhotosView(photos: photos, lateralPadding: 48, spaceBetweenPhotos: 8)
 
     private lazy var descriptionLabel: UILabel = {
         let element = UILabel()
@@ -39,13 +49,13 @@ final class ProductDetailView: UIView {
     }()
     
     // Bullets
-    private lazy var bullet1: BulletItemView = . init(labelValue: getAttributedString(from: Strings.bullet1))
-    private lazy var bullet2: BulletItemView = . init(labelValue: getAttributedString(from: Strings.bullet2))
-    private lazy var bullet3: BulletItemView = . init(labelValue: getAttributedString(from: Strings.bullet3))
-    private lazy var bullet4: BulletItemView = . init(labelValue: getAttributedString(from: Strings.bullet4))
-    private lazy var bullet5: BulletItemView = . init(labelValue: getAttributedString(from: Strings.bullet5))
+    private lazy var bullet1 = BulletItemView(labelValue: getAttributedString(from: Strings.bullet1))
+    private lazy var bullet2 = BulletItemView(labelValue: getAttributedString(from: Strings.bullet2))
+    private lazy var bullet3 = BulletItemView(labelValue: getAttributedString(from: Strings.bullet3))
+    private lazy var bullet4 = BulletItemView(labelValue: getAttributedString(from: Strings.bullet4))
+    private lazy var bullet5 = BulletItemView(labelValue: getAttributedString(from: Strings.bullet5))
     
-    private lazy var productPriceView: ProductPriceView = .init(
+    private lazy var productPriceView = ProductPriceView(
         price: getAttributedString(from: Strings.price),
         pixPrice: getAttributedString(from: Strings.pixPrice),
         pixMessage: getAttributedString(from: Strings.pixMessage,
@@ -129,6 +139,7 @@ extension ProductDetailView: ViewCodable {
     func buildViewHierarchy() {
         scrollView.addSubview(nameLabel)
         scrollView.addSubview(actions)
+        scrollView.addSubview(photosView)
         scrollView.addSubview(descriptionLabel)
         scrollView.addSubview(bullet1)
         scrollView.addSubview(bullet2)
@@ -156,6 +167,7 @@ extension ProductDetailView: ViewCodable {
     func setupAdditionalConfiguration() {
         scrollView.backgroundColor = .white
         scrollView.addCustomSpace(spacing: 16, afterView: actions)
+        scrollView.addCustomSpace(spacing: 16, afterView: photosView)
         scrollView.addCustomSpace(spacing: 16, afterView: descriptionLabel)
         scrollView.addCustomSpace(spacing: 4, afterView: bullet1)
         scrollView.addCustomSpace(spacing: 4, afterView: bullet2)

@@ -35,7 +35,11 @@ extension BulletItemView: ViewCodable {
         addArrangedSubview(label)
     }
     
-    func setupConstraints() { }
+    func setupConstraints() {
+        NSLayoutConstraint.activate([
+            icon.widthAnchor.constraint(equalToConstant: 30)
+        ])
+    }
     
     func setupAdditionalConfiguration() {
         translatesAutoresizingMaskIntoConstraints = false

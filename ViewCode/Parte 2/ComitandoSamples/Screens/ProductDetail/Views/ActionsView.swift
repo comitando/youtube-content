@@ -1,15 +1,6 @@
 import UIKit
 
 class ActionsView: UIStackView {
-    private lazy var actionsStackView: UIStackView = {
-        let element = UIStackView()
-        element.translatesAutoresizingMaskIntoConstraints = false
-        element.axis = .horizontal
-        element.spacing = 8
-        element.alignment = .trailing
-        return element
-    }()
-    
     private lazy var favoriteButton: UIButton = {
         let element = UIButton()
         element.translatesAutoresizingMaskIntoConstraints = false

@@ -57,7 +57,11 @@ final class ProductDetailView: UIView {
     private lazy var bullet5 = BulletItemView(labelValue: getAttributedString(from: Strings.bullet5))
     
     private lazy var productPriceView = ProductPriceView(
-        price: getAttributedString(from: Strings.price),
+        price: getAttributedString(from: Strings.price,
+                                   with: [(text: Strings.price,
+                                           attributes: [
+                                                .strikethroughStyle: NSUnderlineStyle.single.rawValue
+                                           ])]),
         pixPrice: getAttributedString(from: Strings.pixPrice),
         pixMessage: getAttributedString(from: Strings.pixMessage,
                                         with: [(text: Strings.pixHighlight,

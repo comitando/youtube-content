@@ -144,8 +144,8 @@ extension ProductDetailView: ViewCodable {
     func buildViewHierarchy() {
         scrollView.addSubview(nameLabel)
         scrollView.addSubview(actions)
-        scrollView.addSubview(photosScrollView)
-//        scrollView.addSubview(photosCollectionView)
+//        scrollView.addSubview(photosScrollView)
+        scrollView.addSubview(photosCollectionView)
         scrollView.addSubview(descriptionLabel)
         scrollView.addSubview(bullet1)
         scrollView.addSubview(bullet2)
@@ -183,5 +183,7 @@ extension ProductDetailView: ViewCodable {
         scrollView.addCustomSpace(spacing: 44, afterView: bullet5)
         scrollView.addCustomSpace(spacing: 16, afterView: productPriceView)
         scrollView.addCustomSpace(spacing: 16, afterView: buyButton)
+        
+        photosCollectionView.clipsToBounds = false
     }
 }

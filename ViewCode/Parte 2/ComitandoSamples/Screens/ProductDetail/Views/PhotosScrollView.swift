@@ -80,7 +80,6 @@ extension PhotosScrollView: ViewCodable {
         scrollView.isPagingEnabled = true
         scrollView.clipsToBounds = false
         scrollView.delegate = self
-        
     }
 }
 

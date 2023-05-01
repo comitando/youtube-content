@@ -8,7 +8,7 @@ class PhotosCollectionView: UIView {
         let element = UICollectionViewFlowLayout()
         element.itemSize = .init(width: size, height: size)
         element.estimatedItemSize = .init(width: size, height: size)
-        element.minimumInteritemSpacing = 8
+        element.minimumLineSpacing = spaceBetweenPhotos
         element.scrollDirection = .horizontal
 
         return element
@@ -21,7 +21,7 @@ class PhotosCollectionView: UIView {
         element.dataSource = self
         element.isPagingEnabled = true
         element.showsHorizontalScrollIndicator = false
-        
+        element.clipsToBounds = false
         return element
     }()
     

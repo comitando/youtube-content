@@ -44,9 +44,9 @@ class ProductCell: UITableViewCell {
     private lazy var nameLabel: UILabel = {
         let element = UILabel()
         element.translatesAutoresizingMaskIntoConstraints = false
-        element.font = FontConvertible.Font(font: FontFamily.Rockwell.bold, size: 20)
+        element.font = FontConvertible.Font(font: FontFamily.Rockwell.bold, size: 18)
         element.textColor = .black
-        element.numberOfLines = 1
+        element.numberOfLines = 0
         element.textAlignment = .left
         return element
     }()
@@ -54,9 +54,9 @@ class ProductCell: UITableViewCell {
     private lazy var descriptionLabel: UILabel = {
         let element = UILabel()
         element.translatesAutoresizingMaskIntoConstraints = false
-        element.font = FontConvertible.Font(font: FontFamily.Rockwell.regular, size: 12)
+        element.font = FontConvertible.Font(font: FontFamily.Rockwell.regular, size: 11)
         element.textColor = Asset.Colors.gray.color
-        element.numberOfLines = 1
+        element.numberOfLines = 0
         element.textAlignment = .left
         return element
     }()
@@ -64,9 +64,9 @@ class ProductCell: UITableViewCell {
     private lazy var priceLabel: UILabel = {
         let element = UILabel()
         element.translatesAutoresizingMaskIntoConstraints = false
-        element.font = FontConvertible.Font(font: FontFamily.Rockwell.regular, size: 15)
+        element.font = FontConvertible.Font(font: FontFamily.Rockwell.regular, size: 16)
         element.textColor = .black
-        element.numberOfLines = 1
+        element.numberOfLines = 0
         element.textAlignment = .left
         return element
     }()
@@ -74,9 +74,9 @@ class ProductCell: UITableViewCell {
     private lazy var installmentsLabel: UILabel = {
         let element = UILabel()
         element.translatesAutoresizingMaskIntoConstraints = false
-        element.font = FontConvertible.Font(font: FontFamily.Rockwell.bold, size: 12)
+        element.font = FontConvertible.Font(font: FontFamily.Rockwell.bold, size: 11)
         element.textColor = Asset.Colors.gray.color
-        element.numberOfLines = 1
+        element.numberOfLines = 0
         element.textAlignment = .left
         return element
     }()
@@ -109,8 +109,8 @@ extension ProductCell: ViewCodable {
             picture.widthAnchor.constraint(equalToConstant: 100),
             picture.heightAnchor.constraint(equalToConstant: 100),
 
-            horizontalStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            horizontalStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            horizontalStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            horizontalStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             horizontalStackView.topAnchor.constraint(equalTo: contentView.topAnchor),
             horizontalStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
 //            horizontalStackView.heightAnchor.constraint(equalToConstant: 100)

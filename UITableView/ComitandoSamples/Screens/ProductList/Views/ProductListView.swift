@@ -79,11 +79,6 @@ final class ProductListView: UIView {
     required init?(coder: NSCoder) {
         nil
     }
-    
-    // MARK: - Private Methods
-    
-    
-    
 }
 
 // MARK: - ViewCodable

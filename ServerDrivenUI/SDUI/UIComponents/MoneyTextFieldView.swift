@@ -43,16 +43,16 @@ public final class MoneyTextFieldView: SDUIView, UITextFieldDelegate {
     }
 
     private func addButton(title: String, tag: Int) -> UIButton {
-        let Button = UIButton(type: .roundedRect)
-        Button.setTitle(title, for: .normal)
-        Button.tag = tag
-        Button.tintColor = .systemGreen
-        Button.backgroundColor = .white
-        Button.layer.borderColor = UIColor.systemGreen.cgColor
-        Button.layer.cornerRadius = 12
-        Button.layer.borderWidth = 1
-        Button.addTarget(self, action: #selector(didTap(_:)), for: .touchUpInside)
-        return Button
+        let button = UIButton(type: .roundedRect)
+        button.setTitle(title, for: .normal)
+        button.tag = tag
+        button.tintColor = .systemGreen
+        button.backgroundColor = .white
+        button.layer.borderColor = UIColor.systemGreen.cgColor
+        button.layer.cornerRadius = 12
+        button.layer.borderWidth = 1
+        button.addTarget(self, action: #selector(didTap(_:)), for: .touchUpInside)
+        return button
     }
 
     private func addValue(_ action: ActionButton) {

@@ -18,14 +18,14 @@ public final class QuickActionsView: SDUIView {
     }()
 
     private func addButton(title: String, tag: Int) -> UIButton {
-        let Button = UIButton(type: .roundedRect)
-        Button.setTitle(title, for: .normal)
-        Button.tag = tag
-        Button.tintColor = .black
-        Button.backgroundColor = .lightGray
-        Button.layer.cornerRadius = 4
-        Button.addTarget(self, action: #selector(didTap(_:)), for: .touchUpInside)
-        return Button
+        let button = UIButton(type: .roundedRect)
+        button.setTitle(title, for: .normal)
+        button.tag = tag
+        button.tintColor = .black
+        button.backgroundColor = .lightGray
+        button.layer.cornerRadius = 4
+        button.addTarget(self, action: #selector(didTap(_:)), for: .touchUpInside)
+        return button
     }
 
     override public func buildViewHierarchy() {
@@ -55,6 +55,6 @@ public final class QuickActionsView: SDUIView {
 
     @objc func didTap(_ sender: UIButton) {
         guard let item = viewModel?.get(QuickActionsDTO.self)?.items[sender.tag] else { return }
-        delegate?.eventListening(.ButtonAction(type: item.action.type, value: item.action.value))
+        delegate?.eventListening(.buttonAction(type: item.action.type, value: item.action.value))
     }
 }

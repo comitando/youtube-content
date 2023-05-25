@@ -8,38 +8,38 @@
 import UIKit
 
 public final class FullButtonView: SDUIView {
-    private lazy var Button: UIButton = {
-        let Button = UIButton(type: .roundedRect)
-        Button.tintColor = .white
-        Button.backgroundColor = .systemGreen
-        Button.layer.cornerRadius = 12
-        Button.addTarget(self, action: #selector(didTap(_:)), for: .touchUpInside)
-        Button.translatesAutoresizingMaskIntoConstraints = false
-        return Button
+    private lazy var button: UIButton = {
+        let button = UIButton(type: .roundedRect)
+        button.tintColor = .white
+        button.backgroundColor = .systemGreen
+        button.layer.cornerRadius = 12
+        button.addTarget(self, action: #selector(didTap(_:)), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
 
     override public func buildViewHierarchy() {
-        addSubview(Button)
+        addSubview(button)
     }
 
     override public func setupConstraints() {
         NSLayoutConstraint.activate([
-            Button.topAnchor.constraint(equalTo: topAnchor, constant: margin),
-            Button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -margin),
-            Button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -margin),
-            Button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: margin),
-            Button.heightAnchor.constraint(equalToConstant: 44)
+            button.topAnchor.constraint(equalTo: topAnchor, constant: margin),
+            button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -margin),
+            button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -margin),
+            button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: margin),
+            button.heightAnchor.constraint(equalToConstant: 44)
         ])
     }
 
     override public func setupAdditionalConfiguration() {
         guard let viewModel = viewModel?.get(FullButtonDTO.self) else { return }
-        Button.setTitle(viewModel.title, for: .normal)
+        button.setTitle(viewModel.title, for: .normal)
         backgroundColor = .white
     }
 
     @objc func didTap(_ sender: UIButton) {
         guard let item = viewModel?.get(FullButtonDTO.self) else { return }
-        delegate?.eventListening(.ButtonAction(type: item.action.type, value: item.action.value))
+        delegate?.eventListening(.buttonAction(type: item.action.type, value: item.action.value))
     }
 }

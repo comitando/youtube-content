@@ -45,7 +45,7 @@ public protocol SDUIEventsError {
 }
 
 public enum SDUITarget {
-    case ButtonAction(type: ActionButtonType, value: String)
+    case buttonAction(type: ActionButtonType, value: String)
     case sendEventData(type: SDUIEvents)
 }
 

@@ -34,14 +34,14 @@ class SDUIFeedbackController: UIViewController {
     private lazy var titleLabel = renderLabel(font: .preferredFont(forTextStyle: .title1))
     private lazy var subTitleLabel = renderLabel(font: .preferredFont(forTextStyle: .body))
     private lazy var footerStack = renderStack(axis: .vertical, spacing: margin, alignment: .fill)
-    private lazy var Button: UIButton = {
-        let Button = UIButton(type: .roundedRect)
-        Button.tintColor = .white
-        Button.backgroundColor = .systemGreen
-        Button.layer.cornerRadius = 12
-        Button.addTarget(self, action: #selector(didTap(_:)), for: .touchUpInside)
-        Button.translatesAutoresizingMaskIntoConstraints = false
-        return Button
+    private lazy var button: UIButton = {
+        let button = UIButton(type: .roundedRect)
+        button.tintColor = .white
+        button.backgroundColor = .systemGreen
+        button.layer.cornerRadius = 12
+        button.addTarget(self, action: #selector(didTap(_:)), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
     
     override func viewDidLoad() {
@@ -87,7 +87,7 @@ extension SDUIFeedbackController: ViewCodeHelper {
         vStack.addArrangedSubview(titleLabel)
         vStack.addArrangedSubview(subTitleLabel)
         view.addSubview(footerStack)
-        footerStack.addArrangedSubview(Button)
+        footerStack.addArrangedSubview(button)
     }
     
     func setupConstraints() {
@@ -130,7 +130,7 @@ extension SDUIFeedbackController: SDUIFeedbackDisplayLogic {
         case let .showData(data):
             titleLabel.text = data.title
             subTitleLabel.text = data.subtitle
-            Button.setTitle(data.ButtonTitle, for: .normal)
+            button.setTitle(data.buttonTitle, for: .normal)
         }
     }
 

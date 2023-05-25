@@ -11,13 +11,13 @@ public struct FeedbackSystem {
     let icon: String?
     let title: String
     let subtitle: String
-    let buttomTitle: String
+    let ButtonTitle: String
     
-    public init(icon: String? = nil, title: String, subtitle: String, buttomTitle: String) {
+    public init(icon: String? = nil, title: String, subtitle: String, ButtonTitle: String) {
         self.icon = icon
         self.title = title
         self.subtitle = subtitle
-        self.buttomTitle = buttomTitle
+        self.ButtonTitle = ButtonTitle
     }
 }
 

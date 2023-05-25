@@ -18,8 +18,9 @@ final class CDBListViewFactory {
     
     func makeBuilder(router: SDUICoodinatorRouter) -> UIViewController {
         let service = CDBUILoader(network: network, observability: observability)
+        let localService = CDBUILocalLoader(observability: observability)
         let presenter = SDUIListPresenter()
-        let interactor = SDUIListInteractor(service: service, presenter: presenter)
+        let interactor = SDUIListInteractor(service: localService, presenter: presenter)
         let controller = CDBListView(interactor: interactor, router: router)
         presenter.controller = controller
         

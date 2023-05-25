@@ -40,7 +40,7 @@ private final class NetworkClientMock: NetworkClient {
     
     func mockSDUI() -> (data: Data, model: SDUIDTO) {
         let money = SDUIDynamic(id: "MoneyTextField")
-        let fullButtom = SDUIDynamic(id: "FullButtom")
+        let fullButton = SDUIDynamic(id: "FullButton")
         
         let model = SDUIDTO(
             title: "Quanto você quer investir?",
@@ -49,7 +49,7 @@ private final class NetworkClientMock: NetworkClient {
                 money
             ],
             footer: [
-                fullButtom
+                fullButton
             ]
         )
         
@@ -64,7 +64,7 @@ private final class NetworkClientMock: NetworkClient {
                         "title": "Saldo disponível na carteira R$ 950,00",
                         "placeHolder": "R$ 0,00",
                         "message": "Invista um valor a partir de R$ 10,00",
-                        "buttoms": [
+                        "buttons": [
                             [
                                 "title": "R$ 200,00",
                                 "action": [
@@ -92,7 +92,7 @@ private final class NetworkClientMock: NetworkClient {
             ],
             "footer": [
                 [
-                    "id": fullButtom.id,
+                    "id": fullButton.id,
                     "content": [
                         "title": "Continuar",
                         "action": [

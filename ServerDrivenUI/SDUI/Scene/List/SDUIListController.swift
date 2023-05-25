@@ -200,9 +200,9 @@ extension SDUIListController: SDUIDisplayLogic {
 extension SDUIListController: SDUITargetEvent {
     public func eventListening(_ target: SDUITarget) {
         switch target {
-        case let .buttomAction(type, value) where type == .deeplink: router.onNext(self, type: type, value: value)
-        case let .buttomAction(type, _) where type == .transition: interactor.doRequest(.transitionManager)
-        case let .buttomAction(type, _) where type == .sendEvents: interactor.doRequest(.postData)
+        case let .ButtonAction(type, value) where type == .deeplink: router.onNext(self, type: type, value: value)
+        case let .ButtonAction(type, _) where type == .transition: interactor.doRequest(.transitionManager)
+        case let .ButtonAction(type, _) where type == .sendEvents: interactor.doRequest(.postData)
         case let .sendEventData(event): interactor.doRequest(.updateData(event))
         default: break
         }

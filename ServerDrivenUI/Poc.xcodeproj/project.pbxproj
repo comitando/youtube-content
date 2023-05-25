@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		79B8CB992A1EDC9F00E1FB1A /* DTOBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8CB982A1EDC9F00E1FB1A /* DTOBuilder.swift */; };
-		79B8CB9B2A1EE9EF00E1FB1A /* CDBUILoaderAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8CB9A2A1EE9EF00E1FB1A /* CDBUILoaderAdapter.swift */; };
+		79B8CB9B2A1EE9EF00E1FB1A /* CDBUILocalLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8CB9A2A1EE9EF00E1FB1A /* CDBUILocalLoader.swift */; };
 		79B8CB9D2A1EEA8300E1FB1A /* SDUIDTO+BuilderInitializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8CB9C2A1EEA8300E1FB1A /* SDUIDTO+BuilderInitializers.swift */; };
 		79B8CB9F2A1EEAAF00E1FB1A /* SDUIDTOBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8CB9E2A1EEAAF00E1FB1A /* SDUIDTOBuilderProtocol.swift */; };
 		79B8CBA12A1EEAE200E1FB1A /* SDUIBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8CBA02A1EEAE200E1FB1A /* SDUIBuilderProtocol.swift */; };
@@ -189,7 +189,7 @@
 
 /* Begin PBXFileReference section */
 		79B8CB982A1EDC9F00E1FB1A /* DTOBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTOBuilder.swift; sourceTree = "<group>"; };
-		79B8CB9A2A1EE9EF00E1FB1A /* CDBUILoaderAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDBUILoaderAdapter.swift; sourceTree = "<group>"; };
+		79B8CB9A2A1EE9EF00E1FB1A /* CDBUILocalLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDBUILocalLoader.swift; sourceTree = "<group>"; };
 		79B8CB9C2A1EEA8300E1FB1A /* SDUIDTO+BuilderInitializers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SDUIDTO+BuilderInitializers.swift"; sourceTree = "<group>"; };
 		79B8CB9E2A1EEAAF00E1FB1A /* SDUIDTOBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDUIDTOBuilderProtocol.swift; sourceTree = "<group>"; };
 		79B8CBA02A1EEAE200E1FB1A /* SDUIBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDUIBuilderProtocol.swift; sourceTree = "<group>"; };
@@ -461,7 +461,7 @@
 			isa = PBXGroup;
 			children = (
 				B18D66DE29A7B192009F2BC5 /* CDBUILoader.swift */,
-				79B8CB9A2A1EE9EF00E1FB1A /* CDBUILoaderAdapter.swift */,
+				79B8CB9A2A1EE9EF00E1FB1A /* CDBUILocalLoader.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -848,7 +848,7 @@
 				B15F513D29AFD5A500653D62 /* CDBInvestmentSummaryFactory.swift in Sources */,
 				B195682529AEBA5500528668 /* CDBDTO.swift in Sources */,
 				B151017929AEB0FB00167DAA /* CDBListViewFactory.swift in Sources */,
-				79B8CB9B2A1EE9EF00E1FB1A /* CDBUILoaderAdapter.swift in Sources */,
+				79B8CB9B2A1EE9EF00E1FB1A /* CDBUILocalLoader.swift in Sources */,
 				B15F514A29B10FBE00653D62 /* CDBInvestmentValueCompose.swift in Sources */,
 				B1C26B4C29AFBA28001D4D0F /* CDBInvestmentViewFactory.swift in Sources */,
 				B195682729AEBA5500528668 /* CDBManager.swift in Sources */,

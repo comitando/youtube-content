@@ -2,7 +2,7 @@ import Foundation
 import NetworkService
 import SDUI
 
-final class CDBUILoaderAdapter: SDUILoader {
+final class CDBUILocalLoader: SDUILoader {
 
     func request(_ completion: @escaping ((SDUIDTO) -> Void)) {
         completion(

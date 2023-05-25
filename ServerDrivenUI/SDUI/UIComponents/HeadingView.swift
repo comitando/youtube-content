@@ -1,10 +1,3 @@
-//
-//  HeadingView.swift
-//  SDUI
-//
-//  Created by Julio Junior on 24/02/23.
-//
-
 import UIKit
 
 public final class HeadingView: SDUIView {

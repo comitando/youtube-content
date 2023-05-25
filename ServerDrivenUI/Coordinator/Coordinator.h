@@ -1,10 +1,3 @@
-//
-//  Coordinator.h
-//  Coordinator
-//
-//  Created by Julio Junior on 28/02/23.
-//
-
 #import <Foundation/Foundation.h>
 
 //! Project version number for Coordinator.

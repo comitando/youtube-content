@@ -1,10 +1,3 @@
-//
-//  ViewCodeHelper.swift
-//  SDUI
-//
-//  Created by Julio Junior on 14/03/23.
-//
-
 import Foundation
 
 public protocol ViewCodeHelper {

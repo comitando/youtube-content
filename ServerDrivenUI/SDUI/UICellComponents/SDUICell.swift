@@ -1,10 +1,3 @@
-//
-//  SDUICell.swift
-//  SDUI
-//
-//  Created by Julio Junior on 27/02/23.
-//
-
 import UIKit
 
 open class SDUICellController: SDUITargetEvent {

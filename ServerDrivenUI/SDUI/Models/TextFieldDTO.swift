@@ -1,10 +1,3 @@
-//
-//  TextFieldDTO.swift
-//  SDUI
-//
-//  Created by Julio Junior on 01/03/23.
-//
-
 import Foundation
 
 public final class TextFieldBuilder: SDUIDTOBuilderProtocol {

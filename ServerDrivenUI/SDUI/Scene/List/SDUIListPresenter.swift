@@ -1,10 +1,3 @@
-//
-//  TableViewPresenter.swift
-//  Poc
-//
-//  Created by Julio Junior on 28/02/23.
-//
-
 import Foundation
 
 public protocol SDUIPresentationLogic {

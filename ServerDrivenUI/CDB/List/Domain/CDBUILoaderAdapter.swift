@@ -1,22 +1,8 @@
-//
-//  CDBUILocalLoader.swift
-//  CDB
-//
-//  Created by JOAO PEREIRA on 24/05/23.
-//
-
 import Foundation
 import NetworkService
-import Observability
 import SDUI
 
-final class CDBUILocalLoader: SDUILoader {
-
-    private let observability: Observability
-
-    init(observability: Observability) {
-        self.observability = observability
-    }
+final class CDBUILoaderAdapter: SDUILoader {
 
     func request(_ completion: @escaping ((SDUIDTO) -> Void)) {
         completion(

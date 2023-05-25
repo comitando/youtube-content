@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  Poc
-//
-//  Created by Julio Junior on 24/02/23.
-//
-
 import UIKit
 import SDUI
 import CDB

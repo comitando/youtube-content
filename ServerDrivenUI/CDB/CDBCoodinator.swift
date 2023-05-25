@@ -1,10 +1,3 @@
-//
-//  CDBCoodinator.swift
-//  CDB
-//
-//  Created by Julio Junior on 28/02/23.
-//
-
 import UIKit
 import SDUI
 import Coordinator
@@ -49,24 +42,14 @@ extension CDBCoodinator {
         let controller = CDBInvestmentSummaryFactory().makeBuilder(router: self, manager: manager)
         navigationController.pushViewController(controller, animated: true)
     }
-    
-    func finisehdInvestment(_ source: String) {
-        let dataSource = source == "sucesso" ? CDBInvestment.success() : CDBInvestment.failure()
-        let controller = SDKUIFeedbackFactory.makeBuilder(dataSource: dataSource) { [weak self] in
-            self?.navigationController.popToRootViewController(animated: true)
-        }
-        navigationController.pushViewController(controller, animated: true)
-    }
 }
 
 extension CDBCoodinator: SDUICoodinatorRouter {
     
     public func onNext(_ current: UIViewController, type: ActionButtonType, value: String) {
-        print("View: \(current.debugDescription) | type: \(type.rawValue)")
         switch current {
         case current as CDBListView where type == .deeplink: pushDetail()
         case current as CDBDetailView where type == .deeplink: pushIinvestmentValue()
-        case current as CDBInvestmentSummary where type == .deeplink: finisehdInvestment(value)
         default: break
         }
     }

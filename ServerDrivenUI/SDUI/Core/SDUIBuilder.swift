@@ -1,10 +1,3 @@
-//
-//  SDUIBuilder.swift
-//  SDUI
-//
-//  Created by Julio Junior on 02/03/23.
-//
-
 import Foundation
 
 public final class SDUIBuilder {

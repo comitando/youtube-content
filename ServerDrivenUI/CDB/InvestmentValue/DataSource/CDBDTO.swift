@@ -1,10 +1,3 @@
-//
-//  CDBDTO.swift
-//  Poc
-//
-//  Created by Julio Junior on 23/02/23.
-//
-
 import Foundation
 import SDUI
 

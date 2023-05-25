@@ -1,10 +1,3 @@
-//
-//  MoneyTextFieldView.swift
-//  SDUI
-//
-//  Created by Julio Junior on 01/03/23.
-//
-
 import UIKit
 
 public final class MoneyTextFieldView: SDUIView, UITextFieldDelegate {

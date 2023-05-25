@@ -1,23 +1,14 @@
-//
-//  TableViewFactory.swift
-//  Poc
-//
-//  Created by Julio Junior on 28/02/23.
-//
-
 import UIKit
 import SDUI
 import Coordinator
 import NetworkService
-import Observability
 
 final class CDBDetailViewFactory {
     
     private let network = NetworkClientMock()
-    private let observability = ObservabilityMock()
     
     func makeBuilder(router: SDUICoodinatorRouter) -> UIViewController {
-        let service = CDBDetailUILoader(network: network, observability: observability)
+        let service = CDBDetailUILoader(network: network)
         let presenter = SDUIListPresenter()
         let interactor = SDUIListInteractor(service: service, presenter: presenter)
         let controller = CDBDetailView(interactor: interactor, router: router)
@@ -59,7 +50,7 @@ private final class NetworkClientMock: NetworkClient {
                 [
                     "id": heading5.id,
                     "content": [
-                        "title": "Emissor: PicPay Bank"
+                        "title": "Emissor: Bank A"
                     ]
                 ],
                 [
@@ -100,7 +91,7 @@ private final class NetworkClientMock: NetworkClient {
                         "title": "Investir",
                         "action": [
                             "type": "deeplink",
-                            "value": "picpay://invest-flow"
+                            "value": "poc://invest-flow"
                         ]
                     ]
                 ]

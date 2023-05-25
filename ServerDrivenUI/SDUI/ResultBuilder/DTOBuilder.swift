@@ -1,10 +1,3 @@
-//
-//  DTOBuilder.swift
-//  SDUI
-//
-//  Created by JOAO PEREIRA on 24/05/23.
-//
-
 import Foundation
 
 @resultBuilder

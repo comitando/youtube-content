@@ -1,10 +1,3 @@
-//
-//  Heading5DTO.swift
-//  SDUI
-//
-//  Created by Julio Junior on 24/02/23.
-//
-
 import Foundation
 
 public final class HeadingBuilder: SDUIDTOBuilderProtocol {

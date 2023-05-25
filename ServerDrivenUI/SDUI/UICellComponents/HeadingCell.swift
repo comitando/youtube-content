@@ -1,10 +1,3 @@
-//
-//  HeadingCell.swift
-//  SDUI
-//
-//  Created by Julio Junior on 27/02/23.
-//
-
 import UIKit
 
 public final class HeadingCellController: SDUICellController {

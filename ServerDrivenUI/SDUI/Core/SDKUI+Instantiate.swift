@@ -1,10 +1,3 @@
-//
-//  SDKUI+Instantiate.swift
-//  SDUI
-//
-//  Created by Julio Junior on 02/03/23.
-//
-
 import Foundation
 
 public extension SDUIDynamic {

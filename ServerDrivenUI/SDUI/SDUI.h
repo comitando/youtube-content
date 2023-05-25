@@ -1,10 +1,3 @@
-//
-//  SDUI.h
-//  SDUI
-//
-//  Created by Julio Junior on 23/02/23.
-//
-
 #import <Foundation/Foundation.h>
 
 //! Project version number for SDUI.

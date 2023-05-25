@@ -1,10 +1,3 @@
-//
-//  TableViewController.swift
-//  Poc
-//
-//  Created by Julio Junior on 27/02/23.
-//
-
 import Coordinator
 import UIKit
 

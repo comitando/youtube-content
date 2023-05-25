@@ -1,26 +1,16 @@
-//
-//  TableViewFactory.swift
-//  Poc
-//
-//  Created by Julio Junior on 28/02/23.
-//
-
 import UIKit
 import SDUI
 import Coordinator
 import NetworkService
-import Observability
 
 final class CDBListViewFactory {
     
     private let network = NetworkClientMock()
-    private let observability = ObservabilityMock()
     
     func makeBuilder(router: SDUICoodinatorRouter) -> UIViewController {
-        let service = CDBUILoader(network: network, observability: observability)
-        let localService = CDBUILocalLoader(observability: observability)
+        let service = CDBUILoader(network: network)
         let presenter = SDUIListPresenter()
-        let interactor = SDUIListInteractor(service: localService, presenter: presenter)
+        let interactor = SDUIListInteractor(service: service, presenter: presenter)
         let controller = CDBListView(interactor: interactor, router: router)
         presenter.controller = controller
         
@@ -101,7 +91,7 @@ private final class NetworkClientMock: NetworkClient {
                     "id": investimentCard.id,
                     "content": [
                         "title": "CDB resgate imediato",
-                        "subtitle": "PicPay Bank",
+                        "subtitle": "Bank A",
                         "tag": "102% do CDI",
                         "infos": [
                             [
@@ -114,10 +104,10 @@ private final class NetworkClientMock: NetworkClient {
                             ]
                         ],
                         "action": [
-                            "title": "Investir",
+                            "title": "Detalhe",
                             "action": [
                                 "type": "deeplink",
-                                "value": "picpay://investir/cdb"
+                                "value": "poc://investir/cdb"
                             ]
                         ]
                     ]
@@ -126,7 +116,7 @@ private final class NetworkClientMock: NetworkClient {
                     "id": investimentCard.id,
                     "content": [
                         "title": "LCA",
-                        "subtitle": "Original Bank",
+                        "subtitle": "Bank B",
                         "tag": "123% do CDI",
                         "infos": [
                             [
@@ -139,10 +129,10 @@ private final class NetworkClientMock: NetworkClient {
                             ]
                         ],
                         "action": [
-                            "title": "Investir",
+                            "title": "Detalhe",
                             "action": [
                                 "type": "deeplink",
-                                "value": "picpay://investir/lca"
+                                "value": "poc://investir/lca"
                             ]
                         ]
                     ]
@@ -157,7 +147,7 @@ private final class NetworkClientMock: NetworkClient {
                     "id": investimentCard.id,
                     "content": [
                         "title": "CDB resgate imediato",
-                        "subtitle": "PicPay Bank",
+                        "subtitle": "Bank A",
                         "tag": "102% do CDI",
                         "infos": [
                             [
@@ -170,10 +160,10 @@ private final class NetworkClientMock: NetworkClient {
                             ]
                         ],
                         "action": [
-                            "title": "Investir",
+                            "title": "Detalhe",
                             "action": [
                                 "type": "deeplink",
-                                "value": "picpay://investir/cdb"
+                                "value": "poc://investir/cdb"
                             ]
                         ]
                     ]
@@ -182,7 +172,7 @@ private final class NetworkClientMock: NetworkClient {
                     "id": investimentCard.id,
                     "content": [
                         "title": "LCA",
-                        "subtitle": "Original Bank",
+                        "subtitle": "Bank B",
                         "tag": "123% do CDI",
                         "infos": [
                             [
@@ -195,10 +185,10 @@ private final class NetworkClientMock: NetworkClient {
                             ]
                         ],
                         "action": [
-                            "title": "Investir",
+                            "title": "Detalhe",
                             "action": [
                                 "type": "deeplink",
-                                "value": "picpay://investir/lca"
+                                "value": "poc://investir/lca"
                             ]
                         ]
                     ]
@@ -207,7 +197,7 @@ private final class NetworkClientMock: NetworkClient {
                     "id": investimentCard.id,
                     "content": [
                         "title": "LCA",
-                        "subtitle": "Original Bank",
+                        "subtitle": "Bank B",
                         "tag": "123% do CDI",
                         "infos": [
                             [
@@ -220,10 +210,10 @@ private final class NetworkClientMock: NetworkClient {
                             ]
                         ],
                         "action": [
-                            "title": "Investir",
+                            "title": "Detalhe",
                             "action": [
                                 "type": "deeplink",
-                                "value": "picpay://investir/lca"
+                                "value": "poc://investir/lca"
                             ]
                         ]
                     ]
@@ -235,12 +225,4 @@ private final class NetworkClientMock: NetworkClient {
         return (data, model)
     }
 
-}
-
-final class ObservabilityMock: Observability {
-    
-    func sendData(_ error: Error) {
-        
-    }
-    
 }

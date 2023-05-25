@@ -1,10 +1,3 @@
-//
-//  Coordinator.swift
-//  Coordinator
-//
-//  Created by Julio Junior on 28/02/23.
-//
-
 import UIKit
 
 public protocol Coordinator: AnyObject {

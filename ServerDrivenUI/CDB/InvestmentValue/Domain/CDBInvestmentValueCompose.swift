@@ -1,10 +1,3 @@
-//
-//  CDBInvestmentValueCompose.swift
-//  CDB
-//
-//  Created by Julio Junior on 02/03/23.
-//
-
 import Foundation
 import SDUI
 

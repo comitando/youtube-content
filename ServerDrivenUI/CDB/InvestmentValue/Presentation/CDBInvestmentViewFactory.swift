@@ -1,24 +1,15 @@
-//
-//  CDBInvestmentViewFactory.swift
-//  CDB
-//
-//  Created by Julio Junior on 01/03/23.
-//
-
 import UIKit
 import SDUI
 import Coordinator
 import NetworkService
-import Observability
 
 final class CDBInvestmentViewFactory {
     
     private let network = NetworkClientMock()
-    private let observability = ObservabilityMock()
     
     func makeBuilder(router: SDUICoodinatorRouter) -> UIViewController {
-        let manager = CDBManager(network: network, observability: observability)
-        let loader = CDBUIInvestmentValueLoader(network: network, observability: observability)
+        let manager = CDBManager(network: network)
+        let loader = CDBUIInvestmentValueLoader(network: network)
         let serviceCompose = CDBInvestmentValueCompose(loader: loader, manager: manager)
         let presenter = SDUIListPresenter()
         let interactor = SDUIListInteractor(service: serviceCompose, presenter: presenter)
@@ -97,7 +88,7 @@ private final class NetworkClientMock: NetworkClient {
                         "title": "Continuar",
                         "action": [
                             "type": "transition",
-                            "value": "picpay://invest-flow"
+                            "value": "poc://invest-flow"
                         ]
                     ]
                 ]

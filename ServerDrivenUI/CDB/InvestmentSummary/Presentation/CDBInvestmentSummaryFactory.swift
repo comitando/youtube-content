@@ -1,26 +1,17 @@
-//
-//  CDBInvestmentSummaryFactory.swift
-//  CDB
-//
-//  Created by Julio Junior on 01/03/23.
-//
-
 import UIKit
 import SDUI
 import Coordinator
 import NetworkService
-import Observability
 
 final class CDBInvestmentSummaryFactory {
     
     private let network = NetworkClientMock()
-    private let observability = ObservabilityMock()
     
     func makeBuilder(
         router: SDUICoodinatorRouter,
         manager: SDUILoader
     ) -> UIViewController {
-        let loader = CDBUIInvestmentSummaryLoader(network: network, observability: observability)
+        let loader = CDBUIInvestmentSummaryLoader(network: network)
         let serviceCompose = CDBInvestmentValueCompose(loader: loader, manager: manager)
         let presenter = SDUIListPresenter()
         let interactor = SDUIListInteractor(service: serviceCompose, presenter: presenter)
@@ -72,7 +63,7 @@ private final class NetworkClientMock: NetworkClient {
                     "id": investimentCard.id,
                     "content": [
                         "title": "CDB resgate imediato",
-                        "subtitle": "PicPay Bank",
+                        "subtitle": "Bank A",
                         "tag": "102% do CDI",
                         "infos": [
                             [

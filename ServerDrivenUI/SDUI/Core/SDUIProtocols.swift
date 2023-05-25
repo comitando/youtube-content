@@ -45,7 +45,7 @@ public protocol SDUIEventsError {
 }
 
 public enum SDUITarget {
-    case buttomAction(type: ActionButtomType, value: String)
+    case buttonAction(type: ActionButtonType, value: String)
     case sendEventData(type: SDUIEvents)
 }
 
@@ -55,12 +55,12 @@ public protocol SDUITargetEvent: AnyObject {
 
 public protocol SDUICoodinatorRouter {
     func onBack(_ current: UIViewController)
-    func onNext(_ current: UIViewController, type: ActionButtomType, value: String)
+    func onNext(_ current: UIViewController, type: ActionButtonType, value: String)
     func onNext(_ current: UIViewController, manager: SDUILoader)
 }
 
 public extension SDUICoodinatorRouter {
     func onBack(_ current: UIViewController) {}
-    func onNext(_ current: UIViewController, type: ActionButtomType, value: String) {}
+    func onNext(_ current: UIViewController, type: ActionButtonType, value: String) {}
     func onNext(_ current: UIViewController, manager: SDUILoader) {}
 }

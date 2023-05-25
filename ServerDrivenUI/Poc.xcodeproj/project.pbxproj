@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79B8CB992A1EDC9F00E1FB1A /* DTOBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8CB982A1EDC9F00E1FB1A /* DTOBuilder.swift */; };
+		79B8CB9B2A1EE9EF00E1FB1A /* CDBUILocalLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8CB9A2A1EE9EF00E1FB1A /* CDBUILocalLoader.swift */; };
+		79B8CB9D2A1EEA8300E1FB1A /* SDUIDTO+BuilderInitializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8CB9C2A1EEA8300E1FB1A /* SDUIDTO+BuilderInitializers.swift */; };
+		79B8CB9F2A1EEAAF00E1FB1A /* SDUIDTOBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8CB9E2A1EEAAF00E1FB1A /* SDUIDTOBuilderProtocol.swift */; };
+		79B8CBA12A1EEAE200E1FB1A /* SDUIBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8CBA02A1EEAE200E1FB1A /* SDUIBuilderProtocol.swift */; };
 		B1119DB029A94BA200EAA898 /* NetworkClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1119DAF29A94BA200EAA898 /* NetworkClientSpy.swift */; };
 		B1119DB229A94BBF00EAA898 /* ObservabilitySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1119DB129A94BBF00EAA898 /* ObservabilitySpy.swift */; };
 		B11412E029A9416C0085BA5D /* CDB+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11412DF29A9416C0085BA5D /* CDB+Helpers.swift */; };
@@ -301,6 +306,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		79B8CB982A1EDC9F00E1FB1A /* DTOBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTOBuilder.swift; sourceTree = "<group>"; };
+		79B8CB9A2A1EE9EF00E1FB1A /* CDBUILocalLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDBUILocalLoader.swift; sourceTree = "<group>"; };
+		79B8CB9C2A1EEA8300E1FB1A /* SDUIDTO+BuilderInitializers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SDUIDTO+BuilderInitializers.swift"; sourceTree = "<group>"; };
+		79B8CB9E2A1EEAAF00E1FB1A /* SDUIDTOBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDUIDTOBuilderProtocol.swift; sourceTree = "<group>"; };
+		79B8CBA02A1EEAE200E1FB1A /* SDUIBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDUIBuilderProtocol.swift; sourceTree = "<group>"; };
 		B1119DAF29A94BA200EAA898 /* NetworkClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientSpy.swift; sourceTree = "<group>"; };
 		B1119DB129A94BBF00EAA898 /* ObservabilitySpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservabilitySpy.swift; sourceTree = "<group>"; };
 		B11412DF29A9416C0085BA5D /* CDB+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDB+Helpers.swift"; sourceTree = "<group>"; };
@@ -462,6 +472,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		79B8CB972A1EDC8A00E1FB1A /* ResultBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				79B8CB982A1EDC9F00E1FB1A /* DTOBuilder.swift */,
+				79B8CB9C2A1EEA8300E1FB1A /* SDUIDTO+BuilderInitializers.swift */,
+				79B8CB9E2A1EEAAF00E1FB1A /* SDUIDTOBuilderProtocol.swift */,
+				79B8CBA02A1EEAE200E1FB1A /* SDUIBuilderProtocol.swift */,
+			);
+			path = ResultBuilder;
+			sourceTree = "<group>";
+		};
 		B1119DAE29A94B9700EAA898 /* Spies */ = {
 			isa = PBXGroup;
 			children = (
@@ -649,6 +670,7 @@
 			isa = PBXGroup;
 			children = (
 				B18D66DE29A7B192009F2BC5 /* CDBUILoader.swift */,
+				79B8CB9A2A1EE9EF00E1FB1A /* CDBUILocalLoader.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -664,6 +686,7 @@
 		B18D66EA29A7B86A009F2BC5 /* SDUI */ = {
 			isa = PBXGroup;
 			children = (
+				79B8CB972A1EDC8A00E1FB1A /* ResultBuilder */,
 				B15F514029B0C8C100653D62 /* Core */,
 				B18D673229A92295009F2BC5 /* Models */,
 				B1119DE129A970C500EAA898 /* UIComponents */,
@@ -1233,6 +1256,7 @@
 				B1119DB029A94BA200EAA898 /* NetworkClientSpy.swift in Sources */,
 				B195682529AEBA5500528668 /* CDBDTO.swift in Sources */,
 				B151017929AEB0FB00167DAA /* CDBListViewFactory.swift in Sources */,
+				79B8CB9B2A1EE9EF00E1FB1A /* CDBUILocalLoader.swift in Sources */,
 				B1C8DBB429B1411D002E70F2 /* CDBInvestmentSuccess.swift in Sources */,
 				B15F514A29B10FBE00653D62 /* CDBInvestmentValueCompose.swift in Sources */,
 				B1C26B4C29AFBA28001D4D0F /* CDBInvestmentViewFactory.swift in Sources */,
@@ -1250,11 +1274,14 @@
 			files = (
 				B1C825C229AEB24300CA31F3 /* SDUIListPresenter.swift in Sources */,
 				B15448DD29AD809700775E81 /* InvestimentCardCell.swift in Sources */,
+				79B8CBA12A1EEAE200E1FB1A /* SDUIBuilderProtocol.swift in Sources */,
 				B1C825C429AEB24D00CA31F3 /* SDUIListController.swift in Sources */,
 				B1C825C329AEB24900CA31F3 /* SDUIListInteractor.swift in Sources */,
+				79B8CB9F2A1EEAAF00E1FB1A /* SDUIDTOBuilderProtocol.swift in Sources */,
 				B15448D429AD158E00775E81 /* InvestimentCardView.swift in Sources */,
 				B1BC6DFC29C0AEB400E4D2C7 /* ViewCodeHelper.swift in Sources */,
 				B1C8DBAC29B13553002E70F2 /* SDUIFeedbackController.swift in Sources */,
+				79B8CB9D2A1EEA8300E1FB1A /* SDUIDTO+BuilderInitializers.swift in Sources */,
 				B15448C229A9787200775E81 /* QuickActionsView.swift in Sources */,
 				B15448D729AD7ECC00775E81 /* HeadingCell.swift in Sources */,
 				B1C26B5029AFBF54001D4D0F /* MoneyTextFieldView.swift in Sources */,
@@ -1262,6 +1289,7 @@
 				B15448DB29AD804B00775E81 /* QuickActionsCell.swift in Sources */,
 				B15448C429A9791600775E81 /* SDUIView.swift in Sources */,
 				B1C8DBB029B13577002E70F2 /* SDUIFeedbackPresenter.swift in Sources */,
+				79B8CB992A1EDC9F00E1FB1A /* DTOBuilder.swift in Sources */,
 				B1C26B4129AFAEAB001D4D0F /* FullButtomDTO.swift in Sources */,
 				B18D673429A922B1009F2BC5 /* HeadingDTO.swift in Sources */,
 				B1C26B4529AFB0B9001D4D0F /* FullButtomCell.swift in Sources */,
@@ -1671,7 +1699,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1728,7 +1756,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1744,15 +1772,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1761,6 +1791,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.CDB;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1773,15 +1804,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1790,6 +1823,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.CDB;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

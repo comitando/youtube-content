@@ -12,7 +12,7 @@ public final class SDUIBuilder {
         SDUIDynamic.register(HeadingDTO.self, for: "Heading")
         SDUIDynamic.register(QuickActionsDTO.self, for: "QuickActions")
         SDUIDynamic.register(InvestimentCardDTO.self, for: "InvestimentCard")
-        SDUIDynamic.register(FullButtomDTO.self, for: "FullButtom")
+        SDUIDynamic.register(FullButtonDTO.self, for: "FullButton")
         SDUIDynamic.register(TextFieldDTO.self, for: "MoneyTextField")
     }
 }

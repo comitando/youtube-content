@@ -17,15 +17,15 @@ public final class QuickActionsView: SDUIView {
         return stack
     }()
 
-    private func addButtom(title: String, tag: Int) -> UIButton {
-        let buttom = UIButton(type: .roundedRect)
-        buttom.setTitle(title, for: .normal)
-        buttom.tag = tag
-        buttom.tintColor = .black
-        buttom.backgroundColor = .lightGray
-        buttom.layer.cornerRadius = 4
-        buttom.addTarget(self, action: #selector(didTap(_:)), for: .touchUpInside)
-        return buttom
+    private func addButton(title: String, tag: Int) -> UIButton {
+        let button = UIButton(type: .roundedRect)
+        button.setTitle(title, for: .normal)
+        button.tag = tag
+        button.tintColor = .black
+        button.backgroundColor = .lightGray
+        button.layer.cornerRadius = 4
+        button.addTarget(self, action: #selector(didTap(_:)), for: .touchUpInside)
+        return button
     }
 
     override public func buildViewHierarchy() {
@@ -43,13 +43,18 @@ public final class QuickActionsView: SDUIView {
 
     override public func setupAdditionalConfiguration() {
         guard let viewModel = viewModel?.get(QuickActionsDTO.self) else { return }
+        hStack.arrangedSubviews.forEach { view in
+            view.removeFromSuperview()
+            hStack.removeArrangedSubview(view)
+        }
+
         viewModel.items.enumerated().forEach { (index, data) in
-            hStack.addArrangedSubview(addButtom(title: data.title, tag: index))
+            hStack.addArrangedSubview(addButton(title: data.title, tag: index))
         }
     }
 
     @objc func didTap(_ sender: UIButton) {
         guard let item = viewModel?.get(QuickActionsDTO.self)?.items[sender.tag] else { return }
-        delegate?.eventListening(.buttomAction(type: item.action.type, value: item.action.value))
+        delegate?.eventListening(.buttonAction(type: item.action.type, value: item.action.value))
     }
 }

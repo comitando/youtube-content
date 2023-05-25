@@ -43,7 +43,7 @@ private final class NetworkClientMock: NetworkClient {
     func mockSDUI() -> (data: Data, model: SDUIDTO) {
         let heading5 = SDUIDynamic(id: "Heading")
         let investimentCard = SDUIDynamic(id: "InvestimentCard")
-        let fullButtom = SDUIDynamic(id: "FullButtom")
+        let fullButton = SDUIDynamic(id: "FullButton")
         
         let model = SDUIDTO(
             title: "Investir",
@@ -53,7 +53,7 @@ private final class NetworkClientMock: NetworkClient {
                 investimentCard
             ],
             footer: [
-                fullButtom
+                fullButton
             ]
         )
         
@@ -89,7 +89,7 @@ private final class NetworkClientMock: NetworkClient {
             ],
             "footer": [
                 [
-                    "id": fullButtom.id,
+                    "id": fullButton.id,
                     "content": [
                         "title": "Continuar",
                         "action": [

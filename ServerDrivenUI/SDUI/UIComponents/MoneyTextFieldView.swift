@@ -42,27 +42,27 @@ public final class MoneyTextFieldView: SDUIView, UITextFieldDelegate {
         return stack
     }
 
-    private func addButtom(title: String, tag: Int) -> UIButton {
-        let buttom = UIButton(type: .roundedRect)
-        buttom.setTitle(title, for: .normal)
-        buttom.tag = tag
-        buttom.tintColor = .systemGreen
-        buttom.backgroundColor = .white
-        buttom.layer.borderColor = UIColor.systemGreen.cgColor
-        buttom.layer.cornerRadius = 12
-        buttom.layer.borderWidth = 1
-        buttom.addTarget(self, action: #selector(didTap(_:)), for: .touchUpInside)
-        return buttom
+    private func addButton(title: String, tag: Int) -> UIButton {
+        let button = UIButton(type: .roundedRect)
+        button.setTitle(title, for: .normal)
+        button.tag = tag
+        button.tintColor = .systemGreen
+        button.backgroundColor = .white
+        button.layer.borderColor = UIColor.systemGreen.cgColor
+        button.layer.cornerRadius = 12
+        button.layer.borderWidth = 1
+        button.addTarget(self, action: #selector(didTap(_:)), for: .touchUpInside)
+        return button
     }
 
-    private func addValue(_ action: ActionButtom) {
+    private func addValue(_ action: ActionButton) {
         let value = Double(action.value) ?? 0
         let newValue = DecimalFormatter.shared.adding(value: value, currentString: textField.text ?? "")
         textField.text = newValue
         delegate?.eventListening(.sendEventData(type: .newDataValue(newValue)))
     }
 
-    private func newValue(_ action: ActionButtom) {
+    private func newValue(_ action: ActionButton) {
         let value = Double(action.value) ?? 0
         let newValue = DecimalFormatter.shared.adding(value: value, currentString: "")
         textField.text = newValue
@@ -93,8 +93,8 @@ public final class MoneyTextFieldView: SDUIView, UITextFieldDelegate {
         textField.placeholder = viewModel.placeHolder
         errorMessage.text = viewModel.message
 
-        viewModel.buttoms.enumerated().forEach { (index, item) in
-            hStack.addArrangedSubview(addButtom(title: item.title, tag: index))
+        viewModel.buttons.enumerated().forEach { (index, item) in
+            hStack.addArrangedSubview(addButton(title: item.title, tag: index))
         }
     }
 
@@ -106,7 +106,7 @@ public final class MoneyTextFieldView: SDUIView, UITextFieldDelegate {
     }
 
     @objc func didTap(_ sender: UIButton) {
-        guard let item = viewModel?.get(TextFieldDTO.self)?.buttoms[sender.tag] else { return }
+        guard let item = viewModel?.get(TextFieldDTO.self)?.buttons[sender.tag] else { return }
         switch item.action.type {
         case .addValue: addValue(item.action)
         case .newValue: newValue(item.action)

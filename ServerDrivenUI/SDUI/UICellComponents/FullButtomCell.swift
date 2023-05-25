@@ -1,5 +1,5 @@
 //
-//  FullButtomCell.swift
+//  FullButtonCell.swift
 //  SDUI
 //
 //  Created by Julio Junior on 01/03/23.
@@ -7,22 +7,22 @@
 
 import UIKit
 
-public final class FullButtomCellController: SDUICellController {
+public final class FullButtonCellController: SDUICellController {
     override public func registerCell(tableView: UITableView) {
-        tableView.register(FullButtomCell.self, forCellReuseIdentifier: FullButtomCell.identifier)
+        tableView.register(FullButtonCell.self, forCellReuseIdentifier: FullButtonCell.identifier)
     }
 
     override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: FullButtomCell.identifier, for: indexPath) as! FullButtomCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: FullButtonCell.identifier, for: indexPath) as! FullButtonCell
         cell.render(.build(viewModel))
         cell.render(.custom(delegate))
         return cell
     }
 }
 
-public final class FullButtomCell: SDUICell {
-    private lazy var customView: FullButtomView = {
-        let view = FullButtomView()
+public final class FullButtonCell: SDUICell {
+    private lazy var customView: FullButtonView = {
+        let view = FullButtonView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -41,7 +41,7 @@ public final class FullButtomCell: SDUICell {
     }
 }
 
-extension FullButtomCell: SDUIViewInterface {
+extension FullButtonCell: SDUIViewInterface {
     enum RenderType {
         case build(SDUIDynamic)
         case custom(SDUITargetEvent?)

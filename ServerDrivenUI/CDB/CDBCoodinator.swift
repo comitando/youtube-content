@@ -61,7 +61,7 @@ extension CDBCoodinator {
 
 extension CDBCoodinator: SDUICoodinatorRouter {
     
-    public func onNext(_ current: UIViewController, type: ActionButtomType, value: String) {
+    public func onNext(_ current: UIViewController, type: ActionButtonType, value: String) {
         print("View: \(current.debugDescription) | type: \(type.rawValue)")
         switch current {
         case current as CDBListView where type == .deeplink: pushDetail()

@@ -23,12 +23,12 @@ public final class InvestimentCardView: SDUIView {
     private(set) lazy var tagLabel: UILabel = renderLabel(font: .preferredFont(forTextStyle: .body))
     private(set) lazy var vInfoStack: UIStackView = renderStack(axis: .vertical, spacing: 4, alignment: .leading)
 
-    private lazy var buttom: UIButton = {
-        let buttom = UIButton(type: .system)
-        buttom.translatesAutoresizingMaskIntoConstraints = false
-        buttom.addTarget(self, action: #selector(didTap(_:)), for: .touchUpInside)
-        buttom.tintColor = .systemBlue
-        return buttom
+    private lazy var button: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(didTap(_:)), for: .touchUpInside)
+        button.tintColor = .systemBlue
+        return button
     }()
 
     private func renderLabel(font: UIFont, textColor: UIColor = .black, alignment: NSTextAlignment = .left) -> UILabel {
@@ -70,7 +70,7 @@ public final class InvestimentCardView: SDUIView {
         vStack.addArrangedSubview(subtitle)
         vStack.addArrangedSubview(tagLabel)
         vStack.addArrangedSubview(vInfoStack)
-        vStack.addArrangedSubview(buttom)
+        vStack.addArrangedSubview(button)
     }
 
     override public func setupConstraints() {
@@ -100,11 +100,11 @@ public final class InvestimentCardView: SDUIView {
             createHStack(item)
         }
 
-        buttom.setTitle(viewModel.action?.title, for: .normal)
+        button.setTitle(viewModel.action?.title, for: .normal)
     }
 
     @objc func didTap(_ sender: UIButton) {
         guard let item = viewModel?.get(InvestimentCardDTO.self)?.action else { return }
-        delegate?.eventListening(.buttomAction(type: item.action.type, value: item.action.value))
+        delegate?.eventListening(.buttonAction(type: item.action.type, value: item.action.value))
     }
 }

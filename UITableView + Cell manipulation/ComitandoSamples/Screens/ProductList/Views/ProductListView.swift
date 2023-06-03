@@ -273,7 +273,13 @@ extension ProductListView: ProductCellProtocol {
         guard let index = cart.firstIndex(where: { $0.productId == product.id }) else {
             return
         }
-        cart[index].decrementQuantity()
+        
+        if cart[index].quantity == 1 {
+            cart.remove(at: index)
+        } else {
+            cart[index].decrementQuantity()
+        }
+        
         delegate?.didDecrementProduct(product: product)
     }
 }

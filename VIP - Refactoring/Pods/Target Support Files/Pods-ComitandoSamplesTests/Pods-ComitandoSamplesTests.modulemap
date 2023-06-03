@@ -1,0 +1,6 @@
+framework module Pods_ComitandoSamplesTests {
+  umbrella header "Pods-ComitandoSamplesTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

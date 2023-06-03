@@ -1,0 +1,19 @@
+strings:
+  inputs: ComitandoSamples/Resources/Localizable.strings
+  outputs:
+    - templateName: structured-swift5
+      output: ComitandoSamples/Generated/Strings.swift
+      params:
+        enumName: Strings
+xcassets:
+  inputs:
+    - ComitandoSamples/Resources/Assets.xcassets
+    - ComitandoSamples/Resources/Colors.xcassets
+  outputs:
+    - templateName: swift5
+      output: ComitandoSamples/Generated/Assets.swift
+fonts:
+  inputs: ComitandoSamples/Resources/fonts
+  outputs:
+    templateName: swift5
+    output: ComitandoSamples/Generated/Fonts.swift

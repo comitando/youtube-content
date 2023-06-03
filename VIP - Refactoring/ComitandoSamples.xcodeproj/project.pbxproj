@@ -156,8 +156,6 @@
 				25BD218A2A2BA87E00E3BFA8 /* Mock */,
 				25BD21892A2BA81900E3BFA8 /* Models */,
 				25BD21882A2BA6E900E3BFA8 /* VIP */,
-				2525993F2A0041A9003E6701 /* Cells */,
-				252599362A003CA6003E6701 /* Views */,
 			);
 			path = ProductList;
 			sourceTree = "<group>";
@@ -165,6 +163,7 @@
 		252599362A003CA6003E6701 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2525993F2A0041A9003E6701 /* Cells */,
 				2525993A2A003CA6003E6701 /* ProductListView.swift */,
 				25E934452A191D0700732580 /* HeaderSectionView.swift */,
 			);
@@ -192,6 +191,7 @@
 		25BD21882A2BA6E900E3BFA8 /* VIP */ = {
 			isa = PBXGroup;
 			children = (
+				252599362A003CA6003E6701 /* Views */,
 				252599352A003BD9003E6701 /* ProductListViewController.swift */,
 				25BD21842A2BA5C600E3BFA8 /* ProductListInteractor.swift */,
 				25BD21862A2BA62A00E3BFA8 /* ProductListPresenter.swift */,

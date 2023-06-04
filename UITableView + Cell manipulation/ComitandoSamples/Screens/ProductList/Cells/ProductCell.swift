@@ -187,7 +187,6 @@ class ProductCell: UITableViewCell {
     private func didTapAddToCart() {
         guard let product else { return }
         quantityOnCart = 1
-        validateCartStatus()
         delegate?.didAddProduct(product: product)
     }
     
@@ -195,7 +194,6 @@ class ProductCell: UITableViewCell {
     private func didTapIncrementProduct() {
         guard let product else { return }
         quantityOnCart += 1
-        validateCartStatus()
         delegate?.didIncrementProduct(product: product)
     }
     
@@ -203,7 +201,6 @@ class ProductCell: UITableViewCell {
     private func didTapDecrementProduct() {
         guard let product else { return }
         quantityOnCart -= 1
-        validateCartStatus()
         delegate?.didDecrementProduct(product: product)
     }
 }

@@ -1,12 +1,17 @@
-struct CartItem {
+class CartItem {
     let productId: String
     private(set) var quantity: Int = 0
     
-    mutating func incrementQuantity() {
+    init(productId: String, quantity: Int) {
+        self.productId = productId
+        self.quantity = quantity
+    }
+    
+    func incrementQuantity() {
         quantity += 1
     }
     
-    mutating func decrementQuantity() {
+    func decrementQuantity() {
         quantity -= 1
     }
     

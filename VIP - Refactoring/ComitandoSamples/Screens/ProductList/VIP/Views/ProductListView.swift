@@ -2,9 +2,9 @@ import UIKit
 
 protocol ProductListViewProtocol {
     func didSelect(indexPath: IndexPath)
-    func didAddProduct(indexPath: IndexPath)
-    func didIncrementProduct(indexPath: IndexPath)
-    func didDecrementProduct(indexPath: IndexPath)
+    func didAddProduct(product: Product)
+    func didIncrementProduct(product: Product)
+    func didDecrementProduct(product: Product)
 }
 
 final class ProductListView: UIView {
@@ -43,13 +43,13 @@ final class ProductListView: UIView {
         }
     }
     
-    func updateCell(cellContent: ProductCell.CellContent) {
-        let section = cellContent.indexPath.section
-        let row = cellContent.indexPath.row
+    func updateCell(cellContent: ProductCell.CellContent, indexPath: IndexPath) {
+        let section = indexPath.section
+        let row = indexPath.row
 
         content?.categories[section].items[row] = cellContent
         
-        tableView.reloadRows(at: [cellContent.indexPath], with: .fade)
+        tableView.reloadRows(at: [indexPath], with: .fade)
     }
     
     private func getCategory(at section: Int) -> ProductListViewController.ViewContent? {
@@ -149,15 +149,15 @@ extension ProductListView: UITableViewDataSource {
 // MARK: - ProductCellProtocol
 
 extension ProductListView: ProductCellProtocol {
-    func didAddProduct(indexPath: IndexPath) {
-        delegate?.didAddProduct(indexPath: indexPath)
+    func didAddProduct(product: Product) {
+        delegate?.didAddProduct(product: product)
     }
     
-    func didIncrementProduct(indexPath: IndexPath) {
-        delegate?.didIncrementProduct(indexPath: indexPath)
+    func didIncrementProduct(product: Product) {
+        delegate?.didIncrementProduct(product: product)
     }
     
-    func didDecrementProduct(indexPath: IndexPath) {
-        delegate?.didDecrementProduct(indexPath: indexPath)
+    func didDecrementProduct(product: Product) {
+        delegate?.didDecrementProduct(product: product)
     }
 }

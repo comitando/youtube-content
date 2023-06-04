@@ -1,14 +1,13 @@
 import UIKit
 
 protocol ProductCellProtocol: AnyObject {
-    func didAddProduct(indexPath: IndexPath)
-    func didIncrementProduct(indexPath: IndexPath)
-    func didDecrementProduct(indexPath: IndexPath)
+    func didAddProduct(product: Product)
+    func didIncrementProduct(product: Product)
+    func didDecrementProduct(product: Product)
 }
 
 class ProductCell: UITableViewCell {
     struct CellContent {
-        var indexPath: IndexPath
         var quantityOnCart: Int
         var product: Product?
     }
@@ -179,20 +178,20 @@ class ProductCell: UITableViewCell {
     
     @objc
     private func didTapAddToCart() {
-        guard let indexPath = content?.indexPath else { return }
-        delegate?.didAddProduct(indexPath: indexPath)
+        guard let product = content?.product else { return }
+        delegate?.didAddProduct(product: product)
     }
     
     @objc
     private func didTapIncrementProduct() {
-        guard let indexPath = content?.indexPath else { return }
-        delegate?.didIncrementProduct(indexPath: indexPath)
+        guard let product = content?.product else { return }
+        delegate?.didIncrementProduct(product: product)
     }
     
     @objc
     private func didTapDecrementProduct() {
-        guard let indexPath = content?.indexPath else { return }
-        delegate?.didDecrementProduct(indexPath: indexPath)
+        guard let product = content?.product else { return }
+        delegate?.didDecrementProduct(product: product)
     }
 }
 
@@ -225,7 +224,7 @@ extension ProductCell: ViewCodable {
             contentStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             contentStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             contentStackView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            contentStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            contentStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -32),
             contentStackView.heightAnchor.constraint(greaterThanOrEqualToConstant: 100),
             
             descriptionLabel.heightAnchor.constraint(equalToConstant: 16),

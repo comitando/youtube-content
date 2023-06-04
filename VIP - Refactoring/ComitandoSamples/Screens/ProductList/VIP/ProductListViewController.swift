@@ -2,7 +2,7 @@ import UIKit
 
 protocol ProductListViewControllerProtocol: AnyObject {
     func showData(contentList: ProductListViewController.ViewContentList)
-    func updateCell(cellContent: ProductCell.CellContent)
+    func updateCell(cellContent: ProductCell.CellContent, indexPath: IndexPath)
 }
 
 final class ProductListViewController: UIViewController {
@@ -67,9 +67,9 @@ extension ProductListViewController: ProductListViewControllerProtocol {
         view.setContent(content: contentList)
     }
     
-    func updateCell(cellContent: ProductCell.CellContent) {
+    func updateCell(cellContent: ProductCell.CellContent, indexPath: IndexPath) {
         guard let view = productListView as? ProductListView else { return }
-        view.updateCell(cellContent: cellContent)
+        view.updateCell(cellContent: cellContent, indexPath: indexPath)
     }
 }
 
@@ -80,15 +80,15 @@ extension ProductListViewController: ProductListViewProtocol {
         interactor?.didSelect(indexPath: indexPath)
     }
     
-    func didAddProduct(indexPath: IndexPath) {
-        interactor?.didAddProduct(indexPath: indexPath)
+    func didAddProduct(product: Product) {
+        interactor?.didAddProduct(product: product)
     }
     
-    func didIncrementProduct(indexPath: IndexPath) {
-        interactor?.didIncrementProduct(indexPath: indexPath)
+    func didIncrementProduct(product: Product) {
+        interactor?.didIncrementProduct(product: product)
     }
     
-    func didDecrementProduct(indexPath: IndexPath) {
-        interactor?.didDecrementProduct(indexPath: indexPath)
+    func didDecrementProduct(product: Product) {
+        interactor?.didDecrementProduct(product: product)
     }
 }

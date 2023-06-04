@@ -234,7 +234,7 @@ extension ProductCell: ViewCodable {
             contentStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             contentStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             contentStackView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            contentStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            contentStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -32),
             contentStackView.heightAnchor.constraint(greaterThanOrEqualToConstant: 100),
             
             descriptionLabel.heightAnchor.constraint(equalToConstant: 16),

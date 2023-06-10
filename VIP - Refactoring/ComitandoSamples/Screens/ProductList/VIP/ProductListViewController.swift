@@ -3,6 +3,7 @@ import UIKit
 protocol ProductListViewControllerProtocol: AnyObject {
     func showData(contentList: ProductListViewController.ViewContentList)
     func updateCell(cellContent: ProductCell.CellContent, indexPath: IndexPath)
+    func showCart(viewController: UIViewController)
 }
 
 final class ProductListViewController: UIViewController {
@@ -90,5 +91,9 @@ extension ProductListViewController: ProductListViewProtocol {
     
     func didDecrementProduct(product: Product) {
         interactor?.didDecrementProduct(product: product)
+    }
+    
+    func showCart(viewController: UIViewController) {
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

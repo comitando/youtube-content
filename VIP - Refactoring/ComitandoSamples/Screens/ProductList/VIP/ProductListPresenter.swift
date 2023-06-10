@@ -3,7 +3,7 @@ import Foundation
 protocol ProductListPresenterProtocol {
     func showData(categories: [Category], cart: [CartItem])
     func updateCell(product: Product, cartItem: CartItem?, indexPath: IndexPath)
-
+    func showCart(cartItems: [CartItem])
 }
 
 final class ProductListPresenter {
@@ -21,7 +21,7 @@ extension ProductListPresenter: ProductListPresenterProtocol {
         view?.showData(contentList:
             .init(categories: categories.map { category in
                 .init(name: category.name, items: category.items.map { product in
-                    .init(quantityOnCart: cart.first(where: { $0.productId == product.id })?.quantity ?? 0, product: product)
+                        .init(quantityOnCart: cart.first(where: { $0.product.id == product.id })?.quantity ?? 0, product: product)
                 })
             })
         )
@@ -30,5 +30,9 @@ extension ProductListPresenter: ProductListPresenterProtocol {
     func updateCell(product: Product, cartItem: CartItem?, indexPath: IndexPath) {
         view?.updateCell(cellContent: .init(quantityOnCart: cartItem?.quantity ?? 0, product: product),
                          indexPath: indexPath)
+    }
+    
+    func showCart(cartItems: [CartItem]) {
+        view?.showCart(viewController: CartFactory.build(cartItems: cartItems))
     }
 }

@@ -30,6 +30,8 @@ internal enum Strings {
   internal static let buttonLess = Strings.tr("Localizable", "buttonLess", fallback: "-")
   /// simulador de descontos
   internal static let buttonSimulateDiscount = Strings.tr("Localizable", "buttonSimulateDiscount", fallback: "simulador de descontos")
+  /// Carrinho de Compras
+  internal static let cartTitle = Strings.tr("Localizable", "cartTitle", fallback: "Carrinho de Compras")
   /// O MacBook Pro de 14 polegadas com chips M2 Pro e M2 Max eleva a potência e a velocidade a um novo patamar, mesmo quando não está ligado na tomada. Com tela Liquid Retina XDR impressionante, um montão de conexões e bateria para o dia todo, é o notebook profissional que você pode levar para qualquer lugar.
   internal static let description = Strings.tr("Localizable", "description", fallback: "O MacBook Pro de 14 polegadas com chips M2 Pro e M2 Max eleva a potência e a velocidade a um novo patamar, mesmo quando não está ligado na tomada. Com tela Liquid Retina XDR impressionante, um montão de conexões e bateria para o dia todo, é o notebook profissional que você pode levar para qualquer lugar.")
   /// ou 10x de R$ 2.314,88 sem juros

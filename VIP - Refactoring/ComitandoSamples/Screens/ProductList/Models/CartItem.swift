@@ -1,9 +1,13 @@
-class CartItem {
-    let productId: String
+class CartItem: Equatable {
+    static func == (lhs: CartItem, rhs: CartItem) -> Bool {
+        lhs.product == rhs.product
+    }
+    
+    let product: Product
     private(set) var quantity: Int = 0
     
-    init(productId: String, quantity: Int) {
-        self.productId = productId
+    init(product: Product, quantity: Int) {
+        self.product = product
         self.quantity = quantity
     }
     

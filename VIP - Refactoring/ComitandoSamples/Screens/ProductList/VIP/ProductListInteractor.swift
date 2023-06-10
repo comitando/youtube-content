@@ -6,6 +6,7 @@ protocol ProductListInteractorProtocol {
     func didAddProduct(product: Product)
     func didIncrementProduct(product: Product)
     func didDecrementProduct(product: Product)
+    func showCart()
 }
 
 final class ProductListInteractor {
@@ -39,7 +40,7 @@ final class ProductListInteractor {
     }
     
     private func getCartItem(productId: String) -> CartItem? {
-        cart.first(where: { $0.productId == productId } )
+        cart.first(where: { $0.product.id == productId } )
     }
 }
 
@@ -51,11 +52,11 @@ extension ProductListInteractor: ProductListInteractorProtocol {
     }
     
     func didSelect(indexPath: IndexPath) {
-        
+        showCart()
     }
     
     func didAddProduct(product: Product) {
-        cart.append(.init(productId: product.id, quantity: 1))
+        cart.append(.init(product: product, quantity: 1))
 
         guard let cartItem = getCartItem(productId: product.id),
               let indexPath = getProductIndexPath(product: product) else { return }
@@ -80,7 +81,7 @@ extension ProductListInteractor: ProductListInteractorProtocol {
               let indexPath = getProductIndexPath(product: product) else { return }
         
         if cartItem.hasOnlyOne {
-            cart.removeAll(where: { $0.productId == product.id })
+            cart.removeAll(where: { $0.product.id == product.id })
             presenter?.updateCell(product: product,
                                   cartItem: nil,
                                   indexPath: indexPath)
@@ -90,5 +91,9 @@ extension ProductListInteractor: ProductListInteractorProtocol {
                                   cartItem: cartItem,
                                   indexPath: indexPath)
         }
+    }
+    
+    func showCart() {
+        presenter?.showCart(cartItems: cart)
     }
 }

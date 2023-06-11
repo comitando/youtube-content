@@ -3,7 +3,7 @@ import UIKit
 protocol ProductListViewControllerProtocol: AnyObject {
     func showData(contentList: ProductListViewController.ViewContentList)
     func updateCell(cellContent: ProductCell.CellContent, indexPath: IndexPath)
-    func showCart(viewController: UIViewController)
+    func showViewController(viewController: UIViewController)
 }
 
 final class ProductListViewController: UIViewController {
@@ -55,7 +55,18 @@ final class ProductListViewController: UIViewController {
             NSAttributedString.Key.foregroundColor: Asset.Colors.techGreen2.color
         ]
         navigationBar.titleTextAttributes = textAttributes
-        navigationBar.topItem?.title = Strings.listNavigationTitle
+        navigationItem.title = Strings.listNavigationTitle
+        
+        navigationItem.rightBarButtonItem = .init(image: Asset.Assets.cartFill.image,
+                                                  style: .plain,
+                                                  target: self,
+                                                  action: #selector(showCart))
+        navigationItem.rightBarButtonItem?.tintColor = Asset.Colors.techGreen2.color
+    }
+    
+    @objc
+    private func showCart() {
+        interactor?.showCart()
     }
 }
 
@@ -93,7 +104,7 @@ extension ProductListViewController: ProductListViewProtocol {
         interactor?.didDecrementProduct(product: product)
     }
     
-    func showCart(viewController: UIViewController) {
+    func showViewController(viewController: UIViewController) {
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

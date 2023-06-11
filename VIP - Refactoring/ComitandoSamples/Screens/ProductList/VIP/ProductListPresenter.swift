@@ -4,6 +4,7 @@ protocol ProductListPresenterProtocol {
     func showData(categories: [Category], cart: [CartItem])
     func updateCell(product: Product, cartItem: CartItem?, indexPath: IndexPath)
     func showCart(cartItems: [CartItem])
+    func showDetail()
 }
 
 final class ProductListPresenter {
@@ -33,6 +34,10 @@ extension ProductListPresenter: ProductListPresenterProtocol {
     }
     
     func showCart(cartItems: [CartItem]) {
-        view?.showCart(viewController: CartFactory.build(cartItems: cartItems))
+        view?.showViewController(viewController: CartFactory.build(cartItems: cartItems))
+    }
+    
+    func showDetail() {
+        view?.showViewController(viewController: ProductDetailViewController())
     }
 }

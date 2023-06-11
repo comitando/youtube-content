@@ -5,7 +5,7 @@ protocol CartViewControllerProtocol: AnyObject {
     func updateCell(item: CartItem?)
 }
 
-final class CartViewController: UIViewController {
+final class CartViewController: UIViewController, UIGestureRecognizerDelegate {
     var interactor: CartInteractorProtocol?
     
     // MARK: - Private Properties
@@ -24,11 +24,6 @@ final class CartViewController: UIViewController {
         view.backgroundColor = Asset.Colors.spaceBlue1.color
         configureNavigation()
         interactor?.loadData()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        configureNavigation()
     }
     
     override func loadView() {
@@ -50,7 +45,13 @@ final class CartViewController: UIViewController {
             NSAttributedString.Key.foregroundColor: Asset.Colors.techGreen2.color
         ]
         navigationBar.titleTextAttributes = textAttributes
-        navigationBar.topItem?.title = Strings.cartTitle
+        navigationItem.title = Strings.cartTitle
+        
+        navigationItem.leftBarButtonItem = .init(image: Asset.Assets.iconBack.image,
+                                                 style: .plain,
+                                                 target: navigationController,
+                                                 action: #selector(UINavigationController.popViewController(animated:)))
+        navigationItem.leftBarButtonItem?.tintColor = Asset.Colors.techGreen2.color
     }
 }
 

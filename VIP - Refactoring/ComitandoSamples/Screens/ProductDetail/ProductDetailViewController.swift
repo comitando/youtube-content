@@ -36,6 +36,13 @@ class ProductDetailViewController: UIViewController {
             NSAttributedString.Key.foregroundColor: Asset.Colors.techGreen2.color
         ]
         navigationBar.titleTextAttributes = textAttributes
-        navigationBar.topItem?.title = Strings.navigationTitle
+        navigationItem.title = Strings.navigationTitle
+        
+        navigationItem.leftBarButtonItem = .init(image: Asset.Assets.iconBack.image,
+                                                 style: .plain,
+                                                 target: navigationController,
+                                                 action: #selector(UINavigationController.popViewController(animated:)))
+        navigationItem.leftBarButtonItem?.tintColor = Asset.Colors.techGreen2.color
     }
+
 }

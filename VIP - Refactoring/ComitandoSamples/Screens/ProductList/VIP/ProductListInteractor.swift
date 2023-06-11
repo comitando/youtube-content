@@ -52,7 +52,7 @@ extension ProductListInteractor: ProductListInteractorProtocol {
     }
     
     func didSelect(indexPath: IndexPath) {
-        showCart()
+        presenter?.showDetail()
     }
     
     func didAddProduct(product: Product) {

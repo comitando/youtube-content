@@ -44,5 +44,4 @@ class ProductDetailViewController: UIViewController {
                                                  action: #selector(UINavigationController.popViewController(animated:)))
         navigationItem.leftBarButtonItem?.tintColor = Asset.Colors.techGreen2.color
     }
-
 }

@@ -76,14 +76,6 @@ struct Mock {
     """.data(using: .utf8) ?? .init()
     
     var categories: [Category] = {
-        
-        do {
-            let response = try JSONDecoder().decode(CategoryList.self, from: jsonMock)
-
-        } catch  {
-            print(error)
-        }
-        
         guard let response = try? JSONDecoder().decode(CategoryList.self, from: jsonMock) else {
             return []
         }
